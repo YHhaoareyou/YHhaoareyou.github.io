@@ -11,7 +11,7 @@
           // here you can change also a-scene or a-entity properties, like
           // changing your 3D model source, size, position and so on
           // or you can just open links, trigger actions...
-          alert("Hi there!");
+          document.getElementById("example_entity").setAttribute("scale", "0.1 0.1 0.1");
         });
     };
   </script>
@@ -45,6 +45,7 @@
     <a-scene embedded arjs>
       <a-marker preset="hiro">
         <a-entity
+          id="example_entity"
           position="0 0 0"
           scale="0.05 0.05 0.05"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
