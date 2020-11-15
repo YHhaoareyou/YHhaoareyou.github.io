@@ -35,9 +35,6 @@
           }, particleAge);
         }
       });
-      function showCanvas() {
-        document.getElementById("newPaintCanvas").style.display = "block";
-      }
     </script>
     <style>
       #newPaintCanvas {
@@ -49,14 +46,14 @@
   <body style="margin: 0; overflow: hidden;">
     <button
       style="position: fixed; top: 90%; left: 50%; width: 200px; height: 50px; z-index: 500 !important;"
-      onclick="showCanvas()"
+      onclick="document.getElementById('newPaintCanvas').style.display = 'block'"
     >
       Add new paint
     </button>
 
     <canvas
       id="newPaintCanvas"
-      style="position: fixed; top: 0; left: 0; width: 300px; height: 500px; z-index: 1000 !important;"
+      style="position: fixed; top: 0; left: 0; width: 300px; height: 500px; z-index: 1000 !important; background-color: #fff"
     ></canvas>
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
