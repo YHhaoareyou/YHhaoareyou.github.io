@@ -48,20 +48,22 @@
         embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
       >
-        <a-assets>
-          <img id="example_img" src="waseda.png" />
-        </a-assets>
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
+        <a-marker preset="hiro">
+          <a-assets>
+            <img id="example_img" src="waseda.png" />
+          </a-assets>
+          <a-entity cursor="rayOrigin: mouse"></a-entity>
 
-        <a-image
-          src="#example_img"
-          width="3"
-          height="3"
-          position="0 -15 0"
-          rotation="-90 0 0"
-          collide
-        ></a-image>
-        <a-marker-camera preset="hiro"></a-marker-camera>
+          <a-image
+            src="#example_img"
+            width="3"
+            height="3"
+            position="0 -15 0"
+            rotation="-90 0 0"
+            collide
+          ></a-image>
+        </a-marker>
+        <a-entity camera></a-entity>
       </a-scene>
       <button style="z-index: -1000 !important;">123456789</button>
     </div>
