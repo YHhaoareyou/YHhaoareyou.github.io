@@ -4,6 +4,36 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- include ar.js -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script>
+    AFRAME.registerComponent("collide", {
+      init: function() {
+        this.el.addEventListener("click", this.onClick);
+      },
+      onClick: function(e) {
+        var createEffect = function(point, particleAge) {
+          var pointStr = point.x + " " + point.y + " " + point.z;
+          var effect = document.createElement("a-entity");
+          effect.setAttribute("position", pointStr);
+          effect.setAttribute("raycaster", "enabled: false");
+          effect.setAttribute(
+            "particle-system",
+            "color: #ff0, #ff9;maxParticleCount: 100;maxAge: " +
+              particleAge / 1000 +
+              ";velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;"
+          );
+          return effect;
+        };
+        var point = e.detail.intersection.point;
+        var particleAge = 1500;
+        var effect = createEffect(point, particleAge);
+        var scene = document.querySelector("a-scene");
+        scene.appendChild(effect);
+        setTimeout(function() {
+          scene.removeChild(effect);
+        }, particleAge);
+      }
+    });
+  </script>
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene
@@ -22,9 +52,15 @@
         position="0 -15 5"
         rotation="-90 0 0"
       ></a-image>
-      <button>123456789</button>
+      <a-box
+        position="0 0 -10"
+        width="2"
+        height="1"
+        depth="1.5"
+        color="#333"
+        collide
+      ></a-box>
       <a-marker-camera preset="hiro"></a-marker-camera>
     </a-scene>
-    <button>abcdefghi</button>
   </body>
 </html>
