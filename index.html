@@ -43,7 +43,7 @@
 
   <body style="margin: 0; overflow: hidden;">
     <button
-      style="position: fixed; top: 50%; left: 90%; z-index: 500 !important;"
+      style="position: fixed; top: 25%; left: 90%; z-index: 500 !important;"
       onclick="showCanvas()"
     >
       Add new paint
@@ -51,7 +51,7 @@
 
     <canvas
       id="newPaintCanvas"
-      style="display: none; position: fixed; width: 70%; height: 70%; z-index: 1000 !important;"
+      style="display: none; position: fixed; top: 0; left: 0; width: 300px; height: 500px; z-index: 1000 !important;"
     ></canvas>
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
