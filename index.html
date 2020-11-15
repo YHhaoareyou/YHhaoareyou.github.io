@@ -40,10 +40,12 @@
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene
+      style="z-index: 0"
       vr-mode-ui="enabled: false"
       renderer="logarithmicDepthBuffer: true;"
       embedded
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      style="width: 300px; height: 500px;"
     >
       <a-assets>
         <img id="example_img" src="waseda.png" />
@@ -68,5 +70,6 @@
       ></a-box>
       <a-marker-camera preset="hiro"></a-marker-camera>
     </a-scene>
+    <button style="z-index: 100">123456789</button>
   </body>
 </html>
