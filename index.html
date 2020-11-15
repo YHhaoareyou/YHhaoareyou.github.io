@@ -11,13 +11,17 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
+      <a-assets>
+        <img id="example_img" src="korone.jpg" />
+      </a-assets>
       <a-plane
-        position="0 -5 5"
+        position="0 -15 5"
         rotation="-90 0 0"
-        width="3"
-        height="5"
+        width="5"
+        height="8"
         color="#7BC8A4"
       ></a-plane>
+      <a-image src="#example_img" width="3" height="3"></a-image>
       <a-marker-camera preset="hiro"></a-marker-camera>
     </a-scene>
   </body>
