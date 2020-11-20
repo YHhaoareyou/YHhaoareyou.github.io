@@ -9,6 +9,11 @@
     <script>
       function showCanvas() {
         document.getElementById("newPaintCanvas").style.display = "block";
+        document.getElementById("closeCanvasButton").style.display = "block";
+      }
+      function closeCanvas() {
+        document.getElementById("newPaintCanvas").style.display = "none";
+        document.getElementById("closeCanvasButton").style.display = "none";
       }
       AFRAME.registerComponent("collide", {
         init: function() {
@@ -113,6 +118,15 @@
         position: fixed;
         top: 90%;
         left: 50%;
+        width: 200px;
+        height: 50px;
+        z-index: 500 !important;
+      }
+      #closeCanvasButton {
+        display: none;
+        position: fixed;
+        top: 90%;
+        left: 10%;
         width: 200px;
         height: 50px;
         z-index: 500 !important;
@@ -227,6 +241,9 @@
   <body style="margin: 0; overflow: hidden;">
     <button id="newCanvasButton" onclick="showCanvas()">
       Add new paint
+    </button>
+    <button id="closeCanvasButton" onclick="closeCanvas()">
+      Close canvas
     </button>
 
     <div id="colorPanel">
