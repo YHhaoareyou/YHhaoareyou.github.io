@@ -247,9 +247,9 @@
   </head>
 
   <body style="width: 100%; margin: 0; overflow: hidden;">
-    <button id="newCanvasButton" onclick="showCanvas()">
+    <!-- <button id="newCanvasButton" onclick="showCanvas()">
       Add new paint
-    </button>
+    </button> -->
     <button id="closeCanvasButton" onclick="closeCanvas()">
       Close canvas
     </button>
@@ -290,6 +290,9 @@
           rotation="-90 0 0"
           collide
         ></a-image>
+        <button id="newCanvasButton" onclick="showCanvas()">
+          Add new paint
+        </button>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
