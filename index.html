@@ -67,7 +67,7 @@
           context.lineWidth = event.target.value || 1;
         });
 
-        canvas.addEventListener("mousedown", function(event) {
+        canvas.addEventListener("touchstart", function(event) {
           setMouseCoordinates(event);
           isDrawing = true;
 
@@ -75,7 +75,7 @@
           context.moveTo(mouseX, mouseY);
         });
 
-        canvas.addEventListener("mousemove", function(event) {
+        canvas.addEventListener("touchmove", function(event) {
           setMouseCoordinates(event);
 
           if (isDrawing) {
@@ -84,7 +84,7 @@
           }
         });
 
-        canvas.addEventListener("mouseup", function(event) {
+        canvas.addEventListener("touchend", function(event) {
           setMouseCoordinates(event);
           isDrawing = false;
         });
