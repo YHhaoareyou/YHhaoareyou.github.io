@@ -52,7 +52,7 @@
         var mouseX = 0;
         var mouseY = 0;
         context.strokeStyle = "black";
-        context.lineWidth = 1;
+        context.lineWidth = 3;
         var isDrawing = false;
 
         var colors = document.getElementsByClassName("colors")[0];
@@ -64,7 +64,7 @@
         var brushes = document.getElementsByClassName("brushes")[0];
 
         brushes.addEventListener("click", function(event) {
-          context.lineWidth = event.target.value || 5;
+          context.lineWidth = event.target.value || 3;
         });
 
         canvas.addEventListener("touchstart", function(event) {
@@ -79,14 +79,13 @@
           setMouseCoordinates(event);
 
           if (isDrawing) {
-            document.getElementById("test").style.display = "none";
+            document.getElementById("test").innerHTML = `${mouseX}, ${mouseY}`;
             context.lineTo(mouseX, mouseY);
             context.stroke();
           }
         });
 
         canvas.addEventListener("touchend", function(event) {
-          document.getElementById("test").style.display = "block";
           setMouseCoordinates(event);
           isDrawing = false;
         });
@@ -257,9 +256,9 @@
         <button type="button" value="#0fffff"></button>
       </div>
       <div class="brushes">
-        <button type="button" value="5"></button>
-        <button type="button" value="10"></button>
-        <button type="button" value="15"></button>
+        <button type="button" value="1"></button>
+        <button type="button" value="2"></button>
+        <button type="button" value="3"></button>
       </div>
       <div class="buttons">
         <button id="clear" type="button">Clear</button>
@@ -267,7 +266,7 @@
       </div>
     </div>
 
-    <canvas id="newPaintCanvas" width="400" height="500"></canvas>
+    <canvas id="newPaintCanvas" width="350" height="500"></canvas>
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
       <a-assets>
