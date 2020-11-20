@@ -9,7 +9,6 @@
     <script>
       function showCanvas() {
         document.getElementById("newPaintCanvas").style.display = "block";
-        document.getElementById("colorPanel").style.display = "block";
       }
       AFRAME.registerComponent("collide", {
         init: function() {
@@ -129,9 +128,7 @@
         cursor: crosshair;
       }
       #colorPanel {
-        display: none;
         width: 160px;
-        border-right: 1px solid #e0e0e0;
         position: fixed;
         top: 0;
         left: 200;
