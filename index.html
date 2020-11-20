@@ -68,7 +68,6 @@
         });
 
         canvas.addEventListener("touchstart", function(event) {
-          document.getElementById("test").style.display = "none";
           setMouseCoordinates(event);
           isDrawing = true;
 
@@ -80,6 +79,7 @@
           setMouseCoordinates(event);
 
           if (isDrawing) {
+            document.getElementById("test").style.display = "none";
             context.lineTo(mouseX, mouseY);
             context.stroke();
           }
