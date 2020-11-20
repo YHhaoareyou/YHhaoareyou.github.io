@@ -17,7 +17,7 @@
       }
       AFRAME.registerComponent("collide", {
         init: function() {
-          this.el.addEventListener("click", this.onClick);
+          this.el.addEventListener("click", showCanvas);
         },
         onClick: function(e) {
           var createEffect = function(point, particleAge) {
