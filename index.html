@@ -17,7 +17,7 @@
       }
       AFRAME.registerComponent("collide", {
         init: function() {
-          this.el.addEventListener("click", this.onClick);
+          this.el.addEventListener("touchstart", this.onClick);
         },
         onClick: function(e) {
           document.getElementById("newPaintCanvas").style.display = "block";
