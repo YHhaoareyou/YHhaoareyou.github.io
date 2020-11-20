@@ -91,8 +91,8 @@
         });
 
         function setMouseCoordinates(event) {
-          mouseX = event.clientX - boundings.left;
-          mouseY = event.clientY - boundings.top;
+          mouseX = event.touches[0].clientX - boundings.left;
+          mouseY = event.touches[0].clientY - boundings.top;
         }
 
         var clearButton = document.getElementById("clear");
