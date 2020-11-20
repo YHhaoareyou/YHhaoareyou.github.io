@@ -38,7 +38,76 @@
           }, particleAge);
         }
       });
+
+      window.onload = function() {
+        var canvas = document.getElementById("newPaintCanvas");
+        var context = canvas.getContext("2d");
+        var boundings = canvas.getBoundingClientRect();
+
+        var mouseX = 0;
+        var mouseY = 0;
+        context.strokeStyle = "black";
+        context.lineWidth = 1;
+        var isDrawing = false;
+
+        var colors = document.getElementsByClassName("colors")[0];
+
+        colors.addEventListener("click", function(event) {
+          context.strokeStyle = event.target.value || "black";
+        });
+
+        var brushes = document.getElementsByClassName("brushes")[0];
+
+        brushes.addEventListener("click", function(event) {
+          context.lineWidth = event.target.value || 1;
+        });
+
+        canvas.addEventListener("mousedown", function(event) {
+          setMouseCoordinates(event);
+          isDrawing = true;
+
+          context.beginPath();
+          context.moveTo(mouseX, mouseY);
+        });
+
+        canvas.addEventListener("mousemove", function(event) {
+          setMouseCoordinates(event);
+
+          if (isDrawing) {
+            context.lineTo(mouseX, mouseY);
+            context.stroke();
+          }
+        });
+
+        canvas.addEventListener("mouseup", function(event) {
+          setMouseCoordinates(event);
+          isDrawing = false;
+        });
+
+        function setMouseCoordinates(event) {
+          mouseX = event.clientX - boundings.left;
+          mouseY = event.clientY - boundings.top;
+        }
+
+        var clearButton = document.getElementById("clear");
+
+        clearButton.addEventListener("click", function() {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        var saveButton = document.getElementById("save");
+
+        saveButton.addEventListener("click", function() {
+          var imageName = prompt("Please enter image name");
+          var canvasDataURL = canvas.toDataURL();
+          var a = document.createElement("a");
+          a.href = canvasDataURL;
+          a.download = imageName || "drawing";
+          a.click();
+        });
+      };
     </script>
+
     <style>
       #newCanvasButton {
         position: fixed;
@@ -53,9 +122,105 @@
         border: 1px solid #000000;
         position: fixed;
         top: 0;
-        left: 0;
+        left: 200;
         z-index: 1000 !important;
         background-color: #fff;
+        cursor: crosshair;
+      }
+      .left-block {
+        width: 160px;
+        border-right: 1px solid #e0e0e0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000 !important;
+      }
+
+      .colors {
+        background-color: #ece8e8;
+        text-align: center;
+        padding-bottom: 5px;
+        padding-top: 10px;
+      }
+
+      .colors button {
+        display: inline-block;
+        border: 1px solid #00000026;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+      }
+
+      .colors button:nth-of-type(1) {
+        background-color: rgb(255, 0, 0);
+      }
+
+      .colors button:nth-of-type(2) {
+        background-color: rgb(0, 255, 0);
+      }
+
+      .colors button:nth-of-type(3) {
+        background-color: rgb(0, 0, 255);
+      }
+
+      .brushes {
+        padding-top: 5px;
+      }
+
+      .brushes button {
+        display: block;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        background-color: #ece8e8;
+        margin-bottom: 5px;
+        padding: 5px;
+        height: 30px;
+        outline: none;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .brushes button:after {
+        height: 1px;
+        display: block;
+        background: #808080;
+        content: "";
+      }
+
+      .brushes button:nth-of-type(1):after {
+        height: 1px;
+      }
+
+      .brushes button:nth-of-type(2):after {
+        height: 2px;
+      }
+
+      .brushes button:nth-of-type(3):after {
+        height: 3px;
+      }
+
+      .buttons {
+        height: 80px;
+        padding-top: 10px;
+      }
+
+      .buttons button {
+        display: block;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        background-color: #ece8e8;
+        margin-bottom: 5px;
+        padding: 5px;
+        height: 30px;
+        outline: none;
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
       }
     </style>
   </head>
@@ -64,6 +229,23 @@
     <button id="newCanvasButton" onclick="showCanvas()">
       Add new paint
     </button>
+
+    <div class="left-block">
+      <div class="colors">
+        <button type="button" value="#0000ff"></button>
+        <button type="button" value="#009fff"></button>
+        <button type="button" value="#0fffff"></button>
+      </div>
+      <div class="brushes">
+        <button type="button" value="1"></button>
+        <button type="button" value="2"></button>
+        <button type="button" value="3"></button>
+      </div>
+      <div class="buttons">
+        <button id="clear" type="button">Clear</button>
+        <button id="save" type="button">Save</button>
+      </div>
+    </div>
 
     <canvas id="newPaintCanvas" width="300" height="500"></canvas>
 
