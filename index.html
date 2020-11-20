@@ -9,6 +9,7 @@
     <script>
       function showCanvas() {
         document.getElementById("newPaintCanvas").style.display = "block";
+        document.getElementById("newPaintCanvas").style.display = "block";
       }
       AFRAME.registerComponent("collide", {
         init: function() {
@@ -122,12 +123,13 @@
         border: 1px solid #000000;
         position: fixed;
         top: 0;
-        left: 200;
+        left: -200;
         z-index: 1000 !important;
         background-color: #fff;
         cursor: crosshair;
       }
-      .left-block {
+      #colorPanel {
+        display: none;
         width: 160px;
         border-right: 1px solid #e0e0e0;
         position: fixed;
@@ -230,7 +232,7 @@
       Add new paint
     </button>
 
-    <div class="left-block">
+    <div id="colorPanel">
       <div class="colors">
         <button type="button" value="#0000ff"></button>
         <button type="button" value="#009fff"></button>
