@@ -35,13 +35,32 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var storage = firebase.storage();
-    </script>
 
-    <script>
       function closeCanvas() {
         document.getElementById("newPaintCanvas").style.display = "none";
         document.getElementById("closeCanvasButton").style.display = "none";
       }
+
+      function saveCanvas(canvas) {
+        var imageName = prompt("Please enter image name");
+        var storageRef = firebase.storage().ref();
+        canvas.toBlob(function(blob) {
+          var image = new Image();
+          image.src = blob;
+          var uploadTask = storageRef
+            .child("images/" + imageName + "apple")
+            .put(blob)
+            .then(function(snap) {
+              alert("Uploaded!");
+            });
+        });
+        // var canvasDataURL = canvas.toDataURL();
+        // var a = document.createElement("a");
+        // a.href = canvasDataURL;
+        // a.download = imageName || "drawing";
+        // a.click();
+      }
+
       AFRAME.registerComponent("collide", {
         init: function() {
           this.el.addEventListener("click", this.onClick);
@@ -111,22 +130,7 @@
 
         var saveButton = document.getElementById("save");
 
-        saveButton.addEventListener("click", function() {
-          var imageName = prompt("Please enter image name");
-          var storageRef = firebase.storage().ref();
-          canvas.toBlob(function(blob) {
-            var image = new Image();
-            image.src = blob;
-            var uploadTask = storageRef
-              .child("images/" + imageName + "apple")
-              .put(blob);
-          });
-          // var canvasDataURL = canvas.toDataURL();
-          // var a = document.createElement("a");
-          // a.href = canvasDataURL;
-          // a.download = imageName || "drawing";
-          // a.click();
-        });
+        saveButton.addEventListener("click", saveCanvas(canvas));
       };
     </script>
 
