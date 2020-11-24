@@ -55,7 +55,7 @@
                 .child("location1/" + uploadTimestamp)
                 .set({
                   name: imageName,
-                  url: snap.downloadURL,
+                  url: snap.ref.getDownloadURL().then(downloadURL),
                   timestamp: uploadTimestamp,
                   user: "tester"
                 })
