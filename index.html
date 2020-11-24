@@ -49,7 +49,6 @@
             .child("images/" + imageName)
             .put(blob)
             .then(function(snap) {
-              snap.downloadURL;
               database
                 .ref()
                 .child("location1/" + uploadTimestamp)
