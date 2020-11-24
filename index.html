@@ -48,18 +48,24 @@
             .ref()
             .child("images/" + imageName)
             .put(blob)
-            .then(function(snap) {
+            .then(snapshot => {
+              return snapshot.ref.getDownloadURL();
+            })
+            .then(imageUrl => {
               database
                 .ref()
                 .child("location1/" + uploadTimestamp)
                 .set({
                   name: imageName,
-                  url: snap.ref.getDownloadURL().then(downloadURL),
+                  url: imageUrl,
                   timestamp: uploadTimestamp,
                   user: "tester"
                 })
                 .then(function(snap) {
                   alert("Uploaded!");
+                })
+                .catch(error => {
+                  alert(error);
                 });
             });
         });
