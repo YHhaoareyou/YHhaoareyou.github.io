@@ -86,6 +86,8 @@
           document.getElementById("newPaintCanvas").style.display = "block";
           document.getElementById("closeCanvasButton").style.display = "block";
           document.getElementById("colorPanel").style.display = "block";
+          const locationName = e.target.getAttribute("name");
+          document.getElementById("save").setAttribute("name", locationName);
         }
       });
 
@@ -339,6 +341,7 @@
           position="50 0 -100"
           rotation="-90 0 0"
           collide
+          name="location1"
         ></a-image>
       </a-nft>
 
@@ -358,6 +361,7 @@
           position="50 0 -100"
           rotation="-90 0 45"
           collide
+          name="location2"
         ></a-image>
       </a-nft>
 
