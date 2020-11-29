@@ -212,6 +212,12 @@
     </script>
 
     <style>
+      #test_img2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1005 !important;
+      }
       #openCanvasButton {
         display: none;
         position: fixed;
@@ -355,6 +361,11 @@
     <button id="openCanvasButton">
       Create new painting
     </button>
+
+    <img
+      id="test_img2"
+      src="https://firebasestorage.googleapis.com/v0/b/campus-coloring.appspot.com/o/images%2FYubi?alt=media&token=aeb837b8-d58f-43de-9711-9fff003bf690"
+    />
 
     <div id="colorPanel">
       <div class="colors">
