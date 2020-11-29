@@ -79,8 +79,8 @@
 
       AFRAME.registerComponent("markerhandler", {
         init: function() {
-          this.el.sceneEl.addEventListener("markerFound", () => {
-            document.getElementById("testButton").innerHTML = "detected!";
+          this.el.sceneEl.addEventListener("markerFound", e => {
+            document.getElementById("testButton").innerHTML = e.target;
           });
         }
       });
