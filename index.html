@@ -80,7 +80,9 @@
       AFRAME.registerComponent("markerhandler", {
         init: function() {
           this.el.sceneEl.addEventListener("markerFound", e => {
-            document.getElementById("testButton").innerHTML = e.target;
+            document.getElementById(
+              "testButton"
+            ).innerHTML = e.target.getAttribute("url");
           });
         }
       });
