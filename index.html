@@ -135,12 +135,15 @@
             Object.keys(snap.val()).forEach(key => {
               document
                 .getElementById("a_assets")
-                .appendChild(
+                .insertAdjacentHTML(
+                  "beforeend",
                   "<img id='" + key + "' src='" + snap.val()[key].url + "' />"
                 );
+
               document
                 .getElementById("nft_location1")
-                .appendChild(
+                .insertAdjacentHTML(
+                  "beforeend",
                   "<a-image src='" +
                     key +
                     "' width='100' height='100' position='50 -50 -100' rotation='-90 0 0'></a-image>"
