@@ -81,6 +81,10 @@
         init: function() {
           this.el.sceneEl.addEventListener("markerFound", e => {
             const locationName = e.target.getAttribute("location");
+            document
+              .getElementById("example_img")
+              .setAttribute("src", "honkyan.png");
+
             if (
               document.getElementById("newPaintCanvas").style.display !==
               "block"
