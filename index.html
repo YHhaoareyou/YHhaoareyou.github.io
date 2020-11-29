@@ -80,26 +80,36 @@
       AFRAME.registerComponent("markerhandler", {
         init: function() {
           this.el.sceneEl.addEventListener("markerFound", e => {
-            document.getElementById(
-              "testButton"
-            ).innerHTML = e.target.getAttribute("url");
+            const locationName = e.target.getAttribute("location");
+            var openCanvasButton = document.getElementById("openCanvasButton");
+            openCanvasButton.style.display = "block";
+            openCanvasButton.addEventListener("click", e => {
+              openCanvasButton.style.display = "none";
+              document.getElementById("newPaintCanvas").style.display = "block";
+              document.getElementById("closeCanvasButton").style.display =
+                "block";
+              document.getElementById("colorPanel").style.display = "block";
+              document
+                .getElementById("save")
+                .setAttribute("name", locationName);
+            });
           });
         }
       });
 
-      AFRAME.registerComponent("collide", {
-        init: function() {
-          this.el.addEventListener("click", this.onClick);
-        },
-        onClick: function(e) {
-          // show canvas
-          document.getElementById("newPaintCanvas").style.display = "block";
-          document.getElementById("closeCanvasButton").style.display = "block";
-          document.getElementById("colorPanel").style.display = "block";
-          const locationName = e.target.getAttribute("name");
-          document.getElementById("save").setAttribute("name", locationName);
-        }
-      });
+      // AFRAME.registerComponent("collide", {
+      //   init: function() {
+      //     this.el.addEventListener("click", this.onClick);
+      //   },
+      //   onClick: function(e) {
+      //     // show canvas
+      //     document.getElementById("newPaintCanvas").style.display = "block";
+      //     document.getElementById("closeCanvasButton").style.display = "block";
+      //     document.getElementById("colorPanel").style.display = "block";
+      //     const locationName = e.target.getAttribute("name");
+      //     document.getElementById("save").setAttribute("name", locationName);
+      //   }
+      // });
 
       window.onload = function() {
         var canvas = document.getElementById("newPaintCanvas");
@@ -167,11 +177,12 @@
     </script>
 
     <style>
-      #testButton {
+      #openCanvasButton {
+        display: none;
         position: fixed;
         top: 90%;
-        left: 25%;
-        width: 100px;
+        left: 0%;
+        width: 200px;
         height: 50px;
         z-index: 500 !important;
       }
@@ -306,8 +317,8 @@
     <button id="closeCanvasButton" onclick="closeCanvas()">
       Close canvas
     </button>
-    <button id="testButton">
-      test
+    <button id="openCanvasButton">
+      Create new painting
     </button>
 
     <div id="colorPanel">
@@ -342,6 +353,7 @@
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
+        location="location1"
       >
         <a-entity cursor="rayOrigin: mouse"></a-entity>
         <a-image
@@ -363,6 +375,7 @@
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
+        location="location2"
       >
         <a-entity cursor="rayOrigin: mouse"></a-entity>
         <a-image
