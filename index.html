@@ -77,6 +77,14 @@
         // a.click();
       }
 
+      AFRAME.registerComponent("markerhandler", {
+        init: function() {
+          this.el.sceneEl.addEventListener("markerFound", () => {
+            document.getElementById("testButton").innerHTML = "detected!";
+          });
+        }
+      });
+
       AFRAME.registerComponent("collide", {
         init: function() {
           this.el.addEventListener("click", this.onClick);
@@ -157,6 +165,14 @@
     </script>
 
     <style>
+      #testButton {
+        position: fixed;
+        top: 90%;
+        left: 25%;
+        width: 100px;
+        height: 50px;
+        z-index: 500 !important;
+      }
       #closeCanvasButton {
         display: none;
         position: fixed;
@@ -288,6 +304,9 @@
     <button id="closeCanvasButton" onclick="closeCanvas()">
       Close canvas
     </button>
+    <button id="testButton">
+      test
+    </button>
 
     <div id="colorPanel">
       <div class="colors">
@@ -313,19 +332,8 @@
         <img id="example_img" src="waseda.png" />
       </a-assets>
 
-      <!-- <a-marker preset="hiro">
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-        <a-image
-          src="#example_img"
-          width="5"
-          height="5"
-          position="0 -15 5"
-          rotation="-90 0 0"
-          collide
-        ></a-image>
-      </a-marker> -->
-
       <a-nft
+        markerhandler
         type="nft"
         url="descriptors/blg51"
         smooth="true"
@@ -338,7 +346,7 @@
           src="#example_img"
           width="100"
           height="100"
-          position="50 0 -100"
+          position="50 -50 -100"
           rotation="-90 0 0"
           collide
           name="location1"
@@ -346,6 +354,7 @@
       </a-nft>
 
       <a-nft
+        markerhandler
         type="nft"
         url="descriptors/takeuchi"
         smooth="true"
@@ -358,7 +367,7 @@
           src="#example_img"
           width="100"
           height="100"
-          position="50 0 -100"
+          position="50 -50 -100"
           rotation="-90 0 180"
           collide
           name="location2"
