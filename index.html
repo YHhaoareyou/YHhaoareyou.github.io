@@ -90,7 +90,7 @@
           this.el.sceneEl.addEventListener("markerFound", e => {
             const locationName = e.target.getAttribute("location");
             if (
-              document.getElementById("newPaintCanvas").style.display !== "none"
+              document.getElementById("newPaintCanvas").style.display === "none"
             ) {
               var openCanvasButton = document.getElementById(
                 "openCanvasButton"
