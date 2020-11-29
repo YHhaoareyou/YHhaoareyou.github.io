@@ -128,7 +128,12 @@
       // });
 
       window.onload = function() {
-        console.log(database.ref("location1").once("value"));
+        console.log(
+          database
+            .ref("location1")
+            .once("value")
+            .val()
+        );
         var canvas = document.getElementById("newPaintCanvas");
         var context = canvas.getContext("2d");
         var boundings = canvas.getBoundingClientRect();
