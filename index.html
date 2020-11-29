@@ -89,15 +89,9 @@
         init: function() {
           this.el.sceneEl.addEventListener("markerFound", e => {
             const locationName = e.target.getAttribute("location");
-            if (
-              document.getElementById("newPaintCanvas").style.display === "none"
-            ) {
-              var openCanvasButton = document.getElementById(
-                "openCanvasButton"
-              );
-              openCanvasButton.style.display = "block";
-              openCanvasButton.addEventListener("click", displayPaintings(e));
-            }
+            var openCanvasButton = document.getElementById("openCanvasButton");
+            openCanvasButton.style.display = "block";
+            openCanvasButton.addEventListener("click", displayPaintings(e));
           });
           this.el.sceneEl.addEventListener("markerLost", e => {
             var openCanvasButton = document.getElementById("openCanvasButton");
