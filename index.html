@@ -77,26 +77,33 @@
         // a.click();
       }
 
-      function displayPaintings(e) {
-        openCanvasButton.style.display = "none";
-        document.getElementById("newPaintCanvas").style.display = "block";
-        document.getElementById("closeCanvasButton").style.display = "block";
-        document.getElementById("colorPanel").style.display = "block";
-        document.getElementById("save").setAttribute("name", locationName);
-      }
-
       AFRAME.registerComponent("markerhandler", {
         init: function() {
           this.el.sceneEl.addEventListener("markerFound", e => {
             const locationName = e.target.getAttribute("location");
-            var openCanvasButton = document.getElementById("openCanvasButton");
-            openCanvasButton.style.display = "block";
-            openCanvasButton.addEventListener("click", displayPaintings;
+            if (
+              document.getElementById("newPaintCanvas").style.display === "none"
+            ) {
+              var openCanvasButton = document.getElementById(
+                "openCanvasButton"
+              );
+              openCanvasButton.style.display = "block";
+              openCanvasButton.addEventListener("click", e => {
+                openCanvasButton.style.display = "none";
+                document.getElementById("newPaintCanvas").style.display =
+                  "block";
+                document.getElementById("closeCanvasButton").style.display =
+                  "block";
+                document.getElementById("colorPanel").style.display = "block";
+                document
+                  .getElementById("save")
+                  .setAttribute("name", locationName);
+              });
+            }
           });
           this.el.sceneEl.addEventListener("markerLost", e => {
             var openCanvasButton = document.getElementById("openCanvasButton");
             openCanvasButton.style.display = "none";
-            openCanvasButton.removeEventListener("click", displayPaintings);
           });
         }
       });
