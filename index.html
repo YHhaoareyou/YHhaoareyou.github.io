@@ -39,7 +39,7 @@
         document.getElementById("colorPanel").style.display = "none";
       }
 
-      function saveCanvas(canvas) {
+      function saveCanvas(canvas, locationName) {
         var imageName = prompt("Please enter image name");
         canvas.toBlob(function(blob) {
           var image = new Image();
@@ -55,7 +55,7 @@
             .then(imageUrl => {
               database
                 .ref()
-                .child("location1/" + uploadTimestamp)
+                .child(locationName + "/" + uploadTimestamp)
                 .set({
                   name: imageName,
                   url: imageUrl,
@@ -147,8 +147,9 @@
 
         var saveButton = document.getElementById("save");
 
-        saveButton.addEventListener("click", function() {
-          saveCanvas(canvas);
+        saveButton.addEventListener("click", e => {
+          const locationName = e.target.getAttribute("name");
+          saveCanvas(canvas, locationName);
         });
       };
     </script>
@@ -299,7 +300,7 @@
       </div>
       <div class="buttons">
         <button id="clear" type="button">Clear</button>
-        <button id="save" type="button">Save</button>
+        <button id="save" type="button" name="location1">Save</button>
       </div>
     </div>
 
