@@ -134,7 +134,11 @@
                 .getElementById("a_assets")
                 .insertAdjacentHTML(
                   "beforeend",
-                  "<img id='" + key + "' src='" + snap.val()[key].url + "' />"
+                  "<img id='" +
+                    key +
+                    "' src='" +
+                    snap.val()[key].url +
+                    "' crossorigin='anonymous' />"
                 );
 
               document
@@ -361,11 +365,6 @@
     <button id="openCanvasButton">
       Create new painting
     </button>
-
-    <img
-      id="test_img2"
-      src="https://firebasestorage.googleapis.com/v0/b/campus-coloring.appspot.com/o/images%2FYubi?alt=media&token=aeb837b8-d58f-43de-9711-9fff003bf690"
-    />
 
     <div id="colorPanel">
       <div class="colors">
