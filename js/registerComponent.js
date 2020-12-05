@@ -4,6 +4,14 @@ AFRAME.registerComponent("markerhandler", {
       const locationName = e.target.getAttribute("location");
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
+        // Display painting switching buttons
+        var prevImgButton = document.getElementById("prevImgButton");
+        var nextImgButton = document.getElementById("nextImgButton");
+        prevImgButton.style.display = "block";
+        nextImgButton.style.display = "block";
+        prevImgButton.setAttribute("name", locationName);
+        nextImgButton.setAttribute("name", locationName);
+
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";
         openCanvasButton.addEventListener("click", e => {
@@ -12,13 +20,6 @@ AFRAME.registerComponent("markerhandler", {
           document.getElementById("closeCanvasButton").style.display = "block";
           document.getElementById("colorPanel").style.display = "block";
           document.getElementById("save").setAttribute("name", locationName);
-
-          var prevImgButton = document.getElementById("prevImgButton");
-          var nextImgButton = document.getElementById("nextImgButton");
-          prevImgButton.style.display = "block";
-          nextImgButton.style.display = "block";
-          prevImgButton.setAttribute("name", locationName);
-          nextImgButton.setAttribute("name", locationName);
         });
       }
     });
