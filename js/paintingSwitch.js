@@ -1,5 +1,6 @@
 function switchToPrevPainting(e) {
   const locationName = e.target.getAttribute("location");
+  console.log(locationName);
   var nft = document.getElementById("nft_" + locationName);
   const imgCnt = nft.getAttribute("imgCnt");
 
@@ -18,6 +19,7 @@ function switchToPrevPainting(e) {
 
 function switchToNextPainting(e) {
   const locationName = e.target.getAttribute("location");
+  console.log(locationName);
   var nft = document.getElementById("nft_" + locationName);
   const imgCnt = nft.getAttribute("imgCnt");
 
