@@ -1,7 +1,7 @@
 AFRAME.registerComponent("markerhandler", {
   init: function() {
     this.el.sceneEl.addEventListener("markerFound", e => {
-      const locationName = e.target.getAttribute("location");
+      const locationName = e.target.id.replace("nft_", "");
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
         // Display painting switching buttons
