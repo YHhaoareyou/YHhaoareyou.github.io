@@ -1,10 +1,7 @@
 function switchToPrevPainting(e) {
   const locationName = e.target.getAttribute("location");
-  console.log(e);
-  console.log(locationName);
   var nft = document.getElementById("nft_" + locationName);
   const imgCnt = nft.getAttribute("imgCnt");
-  console.log(imgCnt);
 
   // hide current image
   var currentImg = nft.querySelector("a-image[visible='true']");
