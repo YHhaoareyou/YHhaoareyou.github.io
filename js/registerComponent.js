@@ -5,12 +5,12 @@ AFRAME.registerComponent("markerhandler", {
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
         // Display painting switching buttons
-        // var prevImgButton = document.getElementById("prevImgButton");
-        // var nextImgButton = document.getElementById("nextImgButton");
-        // prevImgButton.style.display = "block";
-        // nextImgButton.style.display = "block";
-        // prevImgButton.setAttribute("name", locationName);
-        // nextImgButton.setAttribute("name", locationName);
+        var prevImgButton = document.getElementById("prevImgButton");
+        var nextImgButton = document.getElementById("nextImgButton");
+        prevImgButton.style.display = "block";
+        nextImgButton.style.display = "block";
+        prevImgButton.setAttribute("location", locationName);
+        nextImgButton.setAttribute("location", locationName);
 
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";

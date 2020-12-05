@@ -1,5 +1,4 @@
 function setPrevImgSwitchListener() {
-  console.log("clicked!");
   var prevImgButton = document.getElementById("prevImgButton");
   prevImgButton.addEventListener("click", function() {
     const locationName = e.target.getAttribute("name");
@@ -20,10 +19,9 @@ function setPrevImgSwitchListener() {
 }
 
 function setNextImgSwitchListener() {
-  console.log("clicked!");
   var nextImgButton = document.getElementById("nextImgButton");
-  nextImgButton.addEventListener("click", function() {
-    const locationName = e.target.getAttribute("name");
+  nextImgButton.addEventListener("click", e => {
+    const locationName = e.target.getAttribute("location");
 
     // hide current image
     var currentImg = document
