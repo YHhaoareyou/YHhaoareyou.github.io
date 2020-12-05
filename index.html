@@ -27,7 +27,7 @@
             .ref(locationName)
             .once("value")
             .then(snap => {
-              Object.keys(snap.val()).forEach(key => {
+              Object.keys(snap.val()).forEach((key, i) => {
                 document
                   .getElementById("a_assets")
                   .insertAdjacentHTML(
@@ -39,14 +39,18 @@
                       "' crossorigin='anonymous' />"
                   );
 
-                document
-                  .getElementById("nft_" + locationName)
-                  .insertAdjacentHTML(
-                    "beforeend",
-                    "<a-image src='#" +
+                const aImage =
+                  i === 0
+                    ? "<a-image src='#" +
                       key +
                       "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0'></a-image>"
-                  );
+                    : "<a-image src='#" +
+                      key +
+                      "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0' style='display: none'></a-image>";
+
+                document
+                  .getElementById("nft_" + locationName)
+                  .insertAdjacentHTML("beforeend", aImage);
               });
             });
         });
