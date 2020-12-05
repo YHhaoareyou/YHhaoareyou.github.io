@@ -18,6 +18,7 @@
     <script src="js/firebaseConfig.js"></script>
     <script src="js/registerComponent.js"></script>
     <script src="js/canvasConfig.js"></script>
+    <script src="js/paintingSwitch.js"></script>
 
     <script>
       window.onload = function() {
@@ -27,6 +28,10 @@
             .ref(locationName)
             .once("value")
             .then(snap => {
+              const imgCnt = Object.keys(snap.val()).length;
+              var targetNft = document.getElementById("nft_" + locationName);
+              targetNft.setAttribute("imgCnt", imgCnt);
+
               Object.keys(snap.val()).forEach((key, i) => {
                 document
                   .getElementById("a_assets")
@@ -41,59 +46,24 @@
 
                 const aImageVisibility = i === 0 ? "true" : "false";
 
-                document
-                  .getElementById("nft_" + locationName)
-                  .insertAdjacentHTML(
-                    "beforeend",
-                    "<a-image index='" +
-                      i +
-                      "' src='#" +
-                      key +
-                      "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0' visible='" +
-                      aImageVisibility +
-                      "'></a-image>"
-                  );
+                targetNft.insertAdjacentHTML(
+                  "beforeend",
+                  "<a-image index='" +
+                    i +
+                    "' src='#" +
+                    key +
+                    "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0' visible='" +
+                    aImageVisibility +
+                    "'></a-image>"
+                );
               });
             });
         });
 
         configCanvas();
 
-        var prevImgButton = document.getElementById("prevImgButton");
-        prevImgButton.addEventListener("click", function() {
-          const locationName = e.target.getAttribute("name");
-
-          // hide current image
-          var currentImg = document
-            .getElementById("nft_" + locationName)
-            .querySelector("a-image[visible='true']");
-          currentImg.setAttribute("visible", "false");
-
-          // display prev image
-          const prevImgIndex = parseInt(currentImg.getAttribute("index")) - 1;
-          var prevImg = document
-            .getElementById("nft_" + locationName)
-            .querySelector("a-image[index='" + prevImgIndex + "']");
-          prevImg.setAttribute("visible", "true");
-        });
-
-        var nextImgButton = document.getElementById("nextImgButton");
-        nextImgButton.addEventListener("click", function() {
-          const locationName = e.target.getAttribute("name");
-
-          // hide current image
-          var currentImg = document
-            .getElementById("nft_" + locationName)
-            .querySelector("a-image[visible='true']");
-          currentImg.setAttribute("visible", "false");
-
-          // display prev image
-          const nextImgIndex = parseInt(currentImg.getAttribute("index")) + 1;
-          var nextImg = document
-            .getElementById("nft_" + locationName)
-            .querySelector("a-image[index='" + nextImgIndex + "']");
-          nextImg.setAttribute("visible", "true");
-        });
+        setPrevImgSwitchListener();
+        setNextImgSwitchListener();
       };
     </script>
   </head>
