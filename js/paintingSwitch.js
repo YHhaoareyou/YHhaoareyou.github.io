@@ -11,6 +11,7 @@ function switchToPrevPainting(e) {
   console.log(
     nft.querySelector("a-image[visible='true']").getAttribute("visible")
   );
+  console.log(nft.querySelector("a-image[visible='true']").visible);
   const currentImgIndex = parseInt(
     nft.querySelector("a-image[visible='true']").getAttribute("index")
   );
@@ -21,6 +22,9 @@ function switchToPrevPainting(e) {
       .querySelector("a-image[index='" + currentImgIndex + "']")
       .getAttribute("visible")
   );
+  console.log(
+    nft.querySelector("a-image[index='" + currentImgIndex + "']").visible
+  );
 
   // display prev image
   const prevImgIndex = currentImgIndex === 0 ? imgCnt - 1 : currentImgIndex - 1;
@@ -30,6 +34,9 @@ function switchToPrevPainting(e) {
       .querySelector("a-image[index='" + prevImgIndex + "']")
       .getAttribute("visible")
   );
+  console.log(
+    nft.querySelector("a-image[index='" + prevImgIndex + "']").visible
+  );
   nft
     .querySelector("a-image[index='" + prevImgIndex + "']")
     .setAttribute("visible", "true");
@@ -38,6 +45,9 @@ function switchToPrevPainting(e) {
     nft
       .querySelector("a-image[index='" + prevImgIndex + "']")
       .getAttribute("visible")
+  );
+  console.log(
+    nft.querySelector("a-image[index='" + prevImgIndex + "']").visible
   );
 }
 
