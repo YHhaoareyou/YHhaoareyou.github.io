@@ -61,9 +61,6 @@
         });
 
         configCanvas();
-
-        setPrevImgSwitchListener();
-        setNextImgSwitchListener();
       };
     </script>
   </head>
@@ -75,8 +72,8 @@
     <button id="openCanvasButton">
       Create new painting
     </button>
-    <button id="prevImgButton"><</button>
-    <button id="nextImgButton">></button>
+    <button id="prevImgButton" onclick="switchToPrevPainting(this)"><</button>
+    <button id="nextImgButton" onclick="switchToNextPainting(this)">></button>
 
     <div id="colorPanel">
       <div class="colors">
