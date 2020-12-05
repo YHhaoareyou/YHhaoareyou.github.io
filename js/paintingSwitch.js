@@ -8,6 +8,7 @@ function switchToPrevPainting(e) {
   var currentImg = nft.querySelector("a-image[visible='true']");
   console.log(currentImg);
   currentImg.setAttribute("visible", false);
+  console.log(currentImg);
 
   // display prev image
   const currentImgIndex = parseInt(currentImg.getAttribute("index"));
@@ -15,6 +16,7 @@ function switchToPrevPainting(e) {
   var prevImg = nft.querySelector("a-image[index='" + prevImgIndex + "']");
   console.log(prevImg);
   prevImg.setAttribute("visible", true);
+  console.log(prevImg);
 }
 
 function switchToNextPainting(e) {
