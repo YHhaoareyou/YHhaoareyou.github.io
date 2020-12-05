@@ -7,11 +7,11 @@ function switchToPrevPainting(e) {
   console.log(imgCnt);
 
   // hide current image
-  var currentImg = nft.querySelector("a-image[visible='true']");
+  var currentImg = nft.querySelector("a-image[name='currentImg']");
   console.log(currentImg);
   console.log(currentImg.getAttribute("visible"));
   currentImg.setAttribute("visible", "false");
-  currentImg.setAttribute("width", "500");
+  currentImg.setAttribute("name", "");
   console.log(currentImg);
   console.log(currentImg.getAttribute("visible"));
 
@@ -22,6 +22,7 @@ function switchToPrevPainting(e) {
   console.log(prevImg);
   console.log(prevImg.getAttribute("visible"));
   prevImg.setAttribute("visible", "true");
+  prevImg.setAttribute("name", "currentImg");
   console.log(prevImg);
   console.log(prevImg.getAttribute("visible"));
 }
@@ -35,10 +36,11 @@ function switchToNextPainting(e) {
   console.log(imgCnt);
 
   // hide current image
-  var currentImg = nft.querySelector("a-image[visible='true']");
+  var currentImg = nft.querySelector("a-image[name='currentImg']");
   console.log(currentImg);
   console.log(currentImg.getAttribute("visible"));
   currentImg.setAttribute("visible", "false");
+  currentImg.setAttribute("name", "");
   console.log(currentImg);
   console.log(currentImg.getAttribute("visible"));
 
@@ -49,6 +51,7 @@ function switchToNextPainting(e) {
   console.log(nextImg);
   console.log(nextImg.getAttribute("visible"));
   nextImg.setAttribute("visible", "true");
+  nextImg.setAttribute("name", "currentImg");
   console.log(nextImg);
   console.log(nextImg.getAttribute("visible"));
 }
