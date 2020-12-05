@@ -14,6 +14,10 @@ AFRAME.registerComponent("markerhandler", {
           document.getElementById("prevImgButton").style.display = "block";
           document.getElementById("nextImgButton").style.display = "block";
           document.getElementById("save").setAttribute("name", locationName);
+          var prevImgButton = document.getElementById("prevImgButton");
+          var nextImgButton = document.getElementById("nextImgButton");
+          prevImgButton.setAttribute("name", locationName);
+          nextImgButton.setAttribute("name", locationName);
         });
       }
     });
