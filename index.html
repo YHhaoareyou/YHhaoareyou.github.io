@@ -45,7 +45,7 @@
                     "beforeend",
                     "<a-image src='#" +
                       key +
-                      "' width='1000' height='1000' position='0 0 0' rotation='-90 0 0'></a-image>"
+                      "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0'></a-image>"
                   );
               });
             });
@@ -84,7 +84,9 @@
     <canvas id="newPaintCanvas" width="350" height="500"></canvas>
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-assets id="a_assets"> </a-assets>
+      <a-assets id="a_assets">
+        <img id="example_img" src="waseda.png" />
+      </a-assets>
 
       <a-nft
         markerhandler
@@ -98,6 +100,13 @@
         id="nft_location1"
       >
         <a-entity cursor="rayOrigin: mouse"></a-entity>
+        <a-image
+          src="#example_img"
+          width="400"
+          height="400"
+          position="25 -500 -100"
+          rotation="-90 0 0"
+        ></a-image>
       </a-nft>
 
       <a-nft
