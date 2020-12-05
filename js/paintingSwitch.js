@@ -5,13 +5,13 @@ function switchToPrevPainting(e) {
 
   // hide current image
   var currentImg = nft.querySelector("a-image[visible='true']");
-  currentImg.setAttribute("visible", "false");
+  currentImg.setAttribute("visible", false);
 
   // display prev image
   const currentImgIndex = parseInt(currentImg.getAttribute("index"));
   const prevImgIndex = currentImgIndex === 0 ? imgCnt - 1 : currentImgIndex - 1;
   var prevImg = nft.querySelector("a-image[index='" + prevImgIndex + "']");
-  prevImg.setAttribute("visible", "true");
+  prevImg.setAttribute("visible", true);
 }
 
 function switchToNextPainting(e) {
@@ -21,7 +21,7 @@ function switchToNextPainting(e) {
   var currentImg = document
     .getElementById("nft_" + locationName)
     .querySelector("a-image[visible='true']");
-  currentImg.setAttribute("visible", "false");
+  currentImg.setAttribute("visible", false);
 
   // display prev image
   const currentImgIndex = parseInt(currentImg.getAttribute("index"));
@@ -29,5 +29,5 @@ function switchToNextPainting(e) {
   var nextImg = document
     .getElementById("nft_" + locationName)
     .querySelector("a-image[index='" + nextImgIndex + "']");
-  nextImg.setAttribute("visible", "true");
+  nextImg.setAttribute("visible", true);
 }
