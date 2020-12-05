@@ -1,4 +1,5 @@
 function setPrevImgSwitchListener() {
+  console.log("clicked!");
   var prevImgButton = document.getElementById("prevImgButton");
   prevImgButton.addEventListener("click", function() {
     const locationName = e.target.getAttribute("name");
@@ -19,6 +20,7 @@ function setPrevImgSwitchListener() {
 }
 
 function setNextImgSwitchListener() {
+  console.log("clicked!");
   var nextImgButton = document.getElementById("nextImgButton");
   nextImgButton.addEventListener("click", function() {
     const locationName = e.target.getAttribute("name");
