@@ -41,10 +41,14 @@
 
                 const aImage =
                   i === 0
-                    ? "<a-image src='#" +
+                    ? "<a-image index='" +
+                      i +
+                      "' src='#" +
                       key +
                       "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0'></a-image>"
-                    : "<a-image src='#" +
+                    : "<a-image index='" +
+                      i +
+                      "' src='#" +
                       key +
                       "' width='400' height='400' position='25 -500 -100' rotation='-90 0 0' visible='false'></a-image>";
 
@@ -67,6 +71,8 @@
     <button id="openCanvasButton">
       Create new painting
     </button>
+    <button id="prevImgButton"><</button>
+    <button id="nextImgButton">></button>
 
     <div id="colorPanel">
       <div class="colors">
