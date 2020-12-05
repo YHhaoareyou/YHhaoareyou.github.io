@@ -11,11 +11,12 @@ AFRAME.registerComponent("markerhandler", {
           document.getElementById("newPaintCanvas").style.display = "block";
           document.getElementById("closeCanvasButton").style.display = "block";
           document.getElementById("colorPanel").style.display = "block";
-          document.getElementById("prevImgButton").style.display = "block";
-          document.getElementById("nextImgButton").style.display = "block";
           document.getElementById("save").setAttribute("name", locationName);
+
           var prevImgButton = document.getElementById("prevImgButton");
           var nextImgButton = document.getElementById("nextImgButton");
+          prevImgButton.style.display = "block";
+          nextImgButton.style.display = "block";
           prevImgButton.setAttribute("name", locationName);
           nextImgButton.setAttribute("name", locationName);
         });
