@@ -7,48 +7,23 @@ function switchToPrevPainting(e) {
   console.log(imgCnt);
 
   // hide current image
-  console.log(nft.querySelector("a-image[visible='true']"));
-  console.log(
-    nft.querySelector("a-image[visible='true']").getAttribute("visible")
-  );
-  console.log(nft.querySelector("a-image[visible='true']").visible);
-  const currentImgIndex = parseInt(
-    nft.querySelector("a-image[visible='true']").getAttribute("index")
-  );
-  nft.querySelector("a-image[visible='true']").setAttribute("visible", "false");
-  console.log(nft.querySelector("a-image[index='" + currentImgIndex + "']"));
-  console.log(
-    nft
-      .querySelector("a-image[index='" + currentImgIndex + "']")
-      .getAttribute("visible")
-  );
-  console.log(
-    nft.querySelector("a-image[index='" + currentImgIndex + "']").visible
-  );
+  var currentImg = nft.querySelector("a-image[visible='true']");
+  console.log(currentImg);
+  console.log(currentImg.getAttribute("visible"));
+  currentImg.setAttribute("visible", "false");
+  currentImg.setAttribute("width", "500");
+  console.log(currentImg);
+  console.log(currentImg.getAttribute("visible"));
 
   // display prev image
+  const currentImgIndex = parseInt(currentImg.getAttribute("index"));
   const prevImgIndex = currentImgIndex === 0 ? imgCnt - 1 : currentImgIndex - 1;
-  console.log(nft.querySelector("a-image[index='" + prevImgIndex + "']"));
-  console.log(
-    nft
-      .querySelector("a-image[index='" + prevImgIndex + "']")
-      .getAttribute("visible")
-  );
-  console.log(
-    nft.querySelector("a-image[index='" + prevImgIndex + "']").visible
-  );
-  nft
-    .querySelector("a-image[index='" + prevImgIndex + "']")
-    .setAttribute("visible", "true");
-  console.log(nft.querySelector("a-image[index='" + prevImgIndex + "']"));
-  console.log(
-    nft
-      .querySelector("a-image[index='" + prevImgIndex + "']")
-      .getAttribute("visible")
-  );
-  console.log(
-    nft.querySelector("a-image[index='" + prevImgIndex + "']").visible
-  );
+  var prevImg = nft.querySelector("a-image[index='" + prevImgIndex + "']");
+  console.log(prevImg);
+  console.log(prevImg.getAttribute("visible"));
+  prevImg.setAttribute("visible", "true");
+  console.log(prevImg);
+  console.log(prevImg.getAttribute("visible"));
 }
 
 function switchToNextPainting(e) {
