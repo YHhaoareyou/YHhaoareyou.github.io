@@ -63,9 +63,6 @@
         configCanvas();
         document
           .getElementById("prevImgButton")
-          .setAttribute("location", "location1");
-        document
-          .getElementById("prevImgButton")
           .addEventListener("click", switchToPrevPainting);
         document
           .getElementById("nextImgButton")
@@ -81,8 +78,8 @@
     <button id="openCanvasButton">
       Create new painting
     </button>
-    <button id="prevImgButton" location=""><</button>
-    <button id="nextImgButton" location="">></button>
+    <button id="prevImgButton" name=""><</button>
+    <button id="nextImgButton" name="">></button>
 
     <div id="colorPanel">
       <div class="colors">

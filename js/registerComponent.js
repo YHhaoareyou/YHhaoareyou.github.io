@@ -9,8 +9,8 @@ AFRAME.registerComponent("markerhandler", {
         var nextImgButton = document.getElementById("nextImgButton");
         prevImgButton.style.display = "block";
         nextImgButton.style.display = "block";
-        prevImgButton.setAttribute("location", locationName);
-        nextImgButton.setAttribute("location", locationName);
+        prevImgButton.setAttribute("name", locationName);
+        nextImgButton.setAttribute("name", locationName);
 
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";
