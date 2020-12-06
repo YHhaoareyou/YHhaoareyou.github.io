@@ -58,6 +58,7 @@
   left: 0;
   z-index: 1001 !important;
   display: none;
+  margin-left: 10px;
 }
 
 .colors {
