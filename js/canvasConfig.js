@@ -28,33 +28,7 @@ function saveCanvas(canvas, locationName) {
             user: "tester"
           })
           .then(function(snap) {
-            alert("Uploaded!");
-            document
-              .getElementById("a_assets")
-              .insertAdjacentHTML(
-                "beforeend",
-                "<img id='" +
-                  uploadTimestamp +
-                  "' src='" +
-                  imageUrl +
-                  "' crossorigin='anonymous' />"
-              );
-            var nft = document.getElementById("nft_" + locationName);
-            const imgCnt = nft.getAttribute("imgCnt");
-            nft.setAttribute("imgCnt", imgCnt + 1);
-
-            nft.insertAdjacentHTML(
-              "beforeend",
-              "<a-image index='" +
-                imgCnt +
-                "' src='#" +
-                key +
-                "' width='400' height='400' name='" +
-                "" +
-                "' position='25 -500 -100' rotation='-90 0 0' visible='" +
-                "false" +
-                "'></a-image>"
-            );
+            alert("Uploaded! Refresh the page to see your materpiece!");
           })
           .catch(error => {
             alert(error);
