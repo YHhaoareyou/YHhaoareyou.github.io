@@ -29,6 +29,30 @@ function saveCanvas(canvas, locationName) {
           })
           .then(function(snap) {
             alert("Uploaded!");
+            document
+              .getElementById("a_assets")
+              .insertAdjacentHTML(
+                "beforeend",
+                "<img id='" +
+                  uploadTimestamp +
+                  "' src='" +
+                  imageUrl +
+                  "' crossorigin='anonymous' />"
+              );
+            document
+              .getElementById("nft_" + locationName)
+              .insertAdjacentHTML(
+                "beforeend",
+                "<a-image index='" +
+                  i +
+                  "' src='#" +
+                  key +
+                  "' width='400' height='400' name='" +
+                  aImageName +
+                  "' position='25 -500 -100' rotation='-90 0 0' visible='" +
+                  aImageVisibility +
+                  "'></a-image>"
+              );
           })
           .catch(error => {
             alert(error);
