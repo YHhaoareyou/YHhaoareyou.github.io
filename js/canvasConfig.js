@@ -39,20 +39,19 @@ function saveCanvas(canvas, locationName) {
                   imageUrl +
                   "' crossorigin='anonymous' />"
               );
-            document
-              .getElementById("nft_" + locationName)
-              .insertAdjacentHTML(
-                "beforeend",
-                "<a-image index='" +
-                  i +
-                  "' src='#" +
-                  key +
-                  "' width='400' height='400' name='" +
-                  aImageName +
-                  "' position='25 -500 -100' rotation='-90 0 0' visible='" +
-                  aImageVisibility +
-                  "'></a-image>"
-              );
+            var nft = document.getElementById("nft_" + locationName);
+            nft.insertAdjacentHTML(
+              "beforeend",
+              "<a-image index='" +
+                nft.getAttribute("imgCnt") +
+                "' src='#" +
+                key +
+                "' width='400' height='400' name='" +
+                aImageName +
+                "' position='25 -500 -100' rotation='-90 0 0' visible='" +
+                aImageVisibility +
+                "'></a-image>"
+            );
           })
           .catch(error => {
             alert(error);
