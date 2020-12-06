@@ -5,7 +5,8 @@ function closeCanvas() {
 }
 
 function saveCanvas(canvas, locationName) {
-  var imageName = prompt("Please enter image name");
+  var imageName = prompt("Please name your painting");
+  var description = prompt("Please write something about this painting");
   canvas.toBlob(function(blob) {
     var image = new Image();
     image.src = blob;
@@ -23,6 +24,7 @@ function saveCanvas(canvas, locationName) {
           .child(locationName + "/" + uploadTimestamp)
           .set({
             name: imageName,
+            description: description,
             url: imageUrl,
             timestamp: uploadTimestamp,
             user: "tester"

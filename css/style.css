@@ -184,3 +184,29 @@
   cursor: pointer;
   font-size: 16px;
 }
+
+.imgTitle {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  width: 90%;
+  height: 20px;
+  word-wrap: break-word;
+  overflow: scroll;
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  display: none;
+}
+
+.imgDes {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  width: 90%;
+  height: 50px;
+  word-wrap: break-word;
+  overflow: scroll;
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  display: none;
+}
