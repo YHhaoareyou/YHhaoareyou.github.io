@@ -79,46 +79,64 @@
 }
 
 .colors button:nth-of-type(1) {
-  background-color: #b03060;
+  background-color: red;
 }
 .colors button:nth-of-type(2) {
-  background-color: #fe9a76;
+  background-color: salmon;
 }
 .colors button:nth-of-type(3) {
-  background-color: #ffd700;
+  background-color: orange;
 }
 .colors button:nth-of-type(4) {
-  background-color: #32cd32;
+  background-color: yellow;
 }
 .colors button:nth-of-type(5) {
-  background-color: #016936;
+  background-color: lemonchiffon;
 }
 .colors button:nth-of-type(6) {
-  background-color: #008080;
+  background-color: lightgreen;
 }
 .colors button:nth-of-type(7) {
-  background-color: #0e6eb8;
+  background-color: springgreen;
 }
 .colors button:nth-of-type(8) {
-  background-color: #ee82ee;
+  background-color: green;
 }
 .colors button:nth-of-type(9) {
-  background-color: #b413ec;
+  background-color: cyan;
 }
 .colors button:nth-of-type(10) {
-  background-color: #ff1493;
+  background-color: deepskyblue;
 }
 .colors button:nth-of-type(11) {
-  background-color: #a52a2a;
+  background-color: teal;
 }
 .colors button:nth-of-type(12) {
-  background-color: #a0a0a0;
+  background-color: blue;
 }
 .colors button:nth-of-type(13) {
-  background-color: #000000;
+  background-color: navy;
 }
 .colors button:nth-of-type(14) {
-  background-color: #ffffff;
+  background-color: purple;
+}
+.colors button:nth-of-type(15) {
+  background-color: rebeccapurple;
+}
+.colors button:nth-of-type(16) {
+  background-color: maroon;
+}
+.colors button:nth-of-type(17) {
+  background-color: black;
+}
+.colors button:nth-of-type(18) {
+  background-color: white;
+}
+.colors button:nth-of-type(19) {
+  background-color: gold;
+}
+.colors button:nth-of-type(20) {
+  background-color: silver;
 }
 
 .brushes {
