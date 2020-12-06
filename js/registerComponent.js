@@ -2,17 +2,15 @@ AFRAME.registerComponent("markerhandler", {
   init: function() {
     this.el.sceneEl.addEventListener("markerFound", e => {
       // const locationName = e.target.getAttribute("location");
-      const locationName = e.target.id.replace("nft_", "");
+      const locationName = e.target.id.replace("nft_", ""); // Display painting switching buttons
+      var prevImgButton = document.getElementById("prevImgButton");
+      var nextImgButton = document.getElementById("nextImgButton");
+      prevImgButton.style.display = "block";
+      nextImgButton.style.display = "block";
+      prevImgButton.setAttribute("name", locationName);
+      nextImgButton.setAttribute("name", locationName);
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
-        // Display painting switching buttons
-        var prevImgButton = document.getElementById("prevImgButton");
-        var nextImgButton = document.getElementById("nextImgButton");
-        prevImgButton.style.display = "block";
-        nextImgButton.style.display = "block";
-        prevImgButton.setAttribute("name", locationName);
-        nextImgButton.setAttribute("name", locationName);
-
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";
         openCanvasButton.addEventListener("click", e => {
