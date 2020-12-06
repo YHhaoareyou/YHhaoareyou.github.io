@@ -13,7 +13,6 @@ AFRAME.registerComponent("markerhandler", {
       var openCanvasButton = document.getElementById("openCanvasButton");
       openCanvasButton.style.display = "block";
       openCanvasButton.addEventListener("click", e => {
-        openCanvasButton.style.display = "none";
         document.getElementById("newPaintCanvas").style.display = "block";
         document.getElementById("closeCanvasButton").style.display = "block";
         document.getElementById("toolPanel").style.display = "block";
