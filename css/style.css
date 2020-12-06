@@ -58,9 +58,10 @@
   position: fixed;
   bottom: 3%;
   left: 0;
-  z-index: 1001 !important;
+  z-index: 2000 !important;
   display: none;
   margin-left: 10px;
+  background-color: #ece8e8;
 }
 
 .colors {
@@ -195,5 +196,6 @@
   overflow: scroll !important;
   background: rgba(255, 255, 255, 0.3) !important;
   color: #fff;
+  text-align: center;
   display: none;
 }

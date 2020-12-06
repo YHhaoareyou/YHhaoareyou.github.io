@@ -11,6 +11,15 @@ AFRAME.registerComponent("markerhandler", {
       nextImgButton.setAttribute("name", locationName);
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
+        // display first painting info
+        document.getElementById(
+          "imgInfo_" +
+            e.target
+              .querySelector("a-image[name='currentImg']")
+              .getAttribute("src")
+              .replace("#", "")
+        ).style.display = "block";
+
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";
         openCanvasButton.addEventListener("click", e => {
