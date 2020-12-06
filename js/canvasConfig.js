@@ -47,9 +47,9 @@ function saveCanvas(canvas, locationName) {
                 "' src='#" +
                 key +
                 "' width='400' height='400' name='" +
-                aImageName +
+                "" +
                 "' position='25 -500 -100' rotation='-90 0 0' visible='" +
-                aImageVisibility +
+                "false" +
                 "'></a-image>"
             );
           })
