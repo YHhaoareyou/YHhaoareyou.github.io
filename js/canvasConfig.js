@@ -40,10 +40,13 @@ function saveCanvas(canvas, locationName) {
                   "' crossorigin='anonymous' />"
               );
             var nft = document.getElementById("nft_" + locationName);
+            const imgCnt = nft.getAttribute("imgCnt");
+            nft.setAttribute("imgCnt", imgCnt + 1);
+
             nft.insertAdjacentHTML(
               "beforeend",
               "<a-image index='" +
-                nft.getAttribute("imgCnt") +
+                imgCnt +
                 "' src='#" +
                 key +
                 "' width='400' height='400' name='" +
