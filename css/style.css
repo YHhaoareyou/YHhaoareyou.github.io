@@ -1,8 +1,8 @@
 #openCanvasButton {
   display: none;
   position: fixed;
-  top: 90%;
-  left: 0%;
+  bottom: 5%;
+  right: 5%;
   width: 100px;
   height: 50px;
   padding: 5px !important;
@@ -189,9 +189,9 @@
 
 .imgInfo {
   position: fixed !important;
-  bottom: 10% !important;
+  bottom: 5% !important;
   left: 5% !important;
-  width: 90% !important;
+  width: 60% !important;
   height: 80px !important;
   word-wrap: break-word !important;
   overflow: scroll !important;
