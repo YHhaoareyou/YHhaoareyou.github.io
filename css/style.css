@@ -38,8 +38,8 @@
   display: none;
   border: 3px solid #fff;
   position: fixed;
-  top: 50;
-  left: 50;
+  top: 0;
+  left: 0;
   z-index: 1000 !important;
   background-color: rgba(255, 255, 255, 0.5);
   cursor: crosshair;
@@ -51,7 +51,15 @@
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-#colorPanel {
+#toolPanel {
+  width: 600px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001 !important;
+  display: none;
+}
+/* #colorPanel {
   width: 200px;
   position: fixed;
   bottom: 0;
@@ -74,13 +82,13 @@
   left: 300px;
   z-index: 1001 !important;
   display: none;
-}
+} */
 
 .colors {
   background-color: #ece8e8;
   text-align: center;
   padding-bottom: 5px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .colors button {
@@ -106,18 +114,13 @@
   background-color: rgb(0, 0, 255);
 }
 
-.brushes {
-  padding-top: 5px;
-}
-
 .brushes button {
   display: block;
   width: 100%;
   border: 0;
   border-radius: 0;
   background-color: #ece8e8;
-  margin-bottom: 5px;
-  padding: 5px;
+  padding: 3px;
   height: 30px;
   outline: none;
   position: relative;
