@@ -59,35 +59,11 @@
   z-index: 1001 !important;
   display: none;
 }
-/* #colorPanel {
-  width: 200px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1001 !important;
-  display: none;
-}
-#brushPanel {
-  width: 100px;
-  position: fixed;
-  bottom: 0;
-  left: 200px;
-  z-index: 1001 !important;
-  display: none;
-}
-#actionPanel {
-  width: 100px;
-  position: fixed;
-  bottom: 0;
-  left: 300px;
-  z-index: 1001 !important;
-  display: none;
-} */
 
 .colors {
   background-color: #ece8e8;
   text-align: center;
-  padding: 0px !important;
+  padding-top: 3px !important;
   margin: 0px !important;
 }
 
@@ -125,7 +101,7 @@
   border: 0;
   border-radius: 0;
   background-color: #ece8e8;
-  padding: 3px !important;
+  padding: 1px !important;
   height: 30px;
   outline: none;
   position: relative;
