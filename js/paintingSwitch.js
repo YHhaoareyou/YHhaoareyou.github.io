@@ -21,7 +21,7 @@ function switchToPrevPainting(e) {
 
   // display prev image info
   const prevImgKey = prevImg.getAttribute("src").replace("#", "");
-  document.getElementById("imgInfo_" + prevImgKey).style.display = "none";
+  document.getElementById("imgInfo_" + prevImgKey).style.display = "block";
 }
 
 function switchToNextPainting(e) {
