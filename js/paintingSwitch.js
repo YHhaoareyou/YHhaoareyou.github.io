@@ -10,8 +10,7 @@ function switchToPrevPainting(e) {
 
   // hide current image info
   const currentImgKey = currentImg.getAttribute("src").replace("#", "");
-  document.getElementById("imgTitle_" + currentImgKey).style.display = "none";
-  document.getElementById("imgDes_" + currentImgKey).style.display = "none";
+  document.getElementById("imgInfo_" + currentImgKey).style.display = "none";
 
   // display prev image
   const currentImgIndex = parseInt(currentImg.getAttribute("index"));
@@ -22,8 +21,7 @@ function switchToPrevPainting(e) {
 
   // display prev image info
   const prevImgKey = prevImg.getAttribute("src").replace("#", "");
-  document.getElementById("imgTitle_" + prevImgKey).style.display = "none";
-  document.getElementById("imgDes_" + prevImgKey).style.display = "none";
+  document.getElementById("imgInfo_" + prevImgKey).style.display = "none";
 }
 
 function switchToNextPainting(e) {
@@ -38,8 +36,7 @@ function switchToNextPainting(e) {
 
   // hide current image info
   const currentImgKey = currentImg.getAttribute("src").replace("#", "");
-  document.getElementById("imgTitle_" + currentImgKey).style.display = "none";
-  document.getElementById("imgDes_" + currentImgKey).style.display = "none";
+  document.getElementById("imgInfo_" + currentImgKey).style.display = "none";
 
   // display next image
   const currentImgIndex = parseInt(currentImg.getAttribute("index"));
@@ -50,6 +47,5 @@ function switchToNextPainting(e) {
 
   // display next image info
   const nextImgKey = nextImg.getAttribute("src").replace("#", "");
-  document.getElementById("imgTitle_" + nextImgKey).style.display = "block";
-  document.getElementById("imgDes_" + nextImgKey).style.display = "block";
+  document.getElementById("imgInfo_" + nextImgKey).style.display = "block";
 }

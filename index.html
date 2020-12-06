@@ -67,17 +67,16 @@
                     "'></a-image>"
                 );
 
-                document.body.innerHTML +=
-                  "<div class='imgTitle ui segment' id='imgTitle_" +
-                  key +
-                  "'>" +
-                  snap.val()[key].name +
-                  "</div>" +
-                  "<div class='imgDes ui segment' id='imgDes_" +
-                  key +
-                  "'>" +
-                  (snap.val()[key].description || "") +
-                  "</div>";
+                document.body.insertAdjacentHTML(
+                  "afterbegin",
+                  "<div class='imgTitle ui segment' id='imgInfo_" +
+                    key +
+                    "'><strong>" +
+                    snap.val()[key].name +
+                    "</strong><br />" +
+                    (snap.val()[key].description || "") +
+                    "</div>"
+                );
               });
             });
         });

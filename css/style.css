@@ -185,20 +185,7 @@
   font-size: 16px;
 }
 
-.imgTitle {
-  position: fixed !important;
-  bottom: 10% !important;
-  left: 5% !important;
-  width: 90% !important;
-  height: 20px !important;
-  word-wrap: break-word !important;
-  overflow: scroll !important;
-  background: rgba(255, 255, 255, 0.3) !important;
-  color: #fff;
-  display: none;
-}
-
-.imgDes {
+.imgInfo {
   position: fixed !important;
   bottom: 10% !important;
   left: 5% !important;
