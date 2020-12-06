@@ -87,8 +87,8 @@
 .colors {
   background-color: #ece8e8;
   text-align: center;
-  padding: 0px;
-  margin: 0px;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .colors button {
@@ -115,8 +115,8 @@
 }
 
 .brushes {
-  padding: 0px;
-  margin: 0px;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .brushes button {
@@ -125,7 +125,7 @@
   border: 0;
   border-radius: 0;
   background-color: #ece8e8;
-  padding: 3px;
+  padding: 3px !important;
   height: 30px;
   outline: none;
   position: relative;
@@ -152,8 +152,8 @@
 }
 
 .buttons {
-  padding: 0px;
-  margin: 0px;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .buttons button {
