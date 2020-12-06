@@ -39,6 +39,8 @@ function saveCanvas(canvas, locationName) {
 
 function configCanvas() {
   var canvas = document.getElementById("newPaintCanvas");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight * 0.8;
   var context = canvas.getContext("2d");
   var boundings = canvas.getBoundingClientRect();
 
