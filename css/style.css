@@ -23,7 +23,6 @@
   position: fixed;
   top: 50%;
   left: 0;
-  z-index: 2000;
 }
 #nextImgButton {
   width: 50px;
@@ -32,14 +31,14 @@
   position: fixed;
   top: 50%;
   right: 0;
-  z-index: 2000;
 }
 #newPaintCanvas {
   display: none;
   border: 3px solid #fff;
   position: fixed;
+  width: 100%;
   top: 5%;
-  left: 5%;
+  /* left: 5%; */
   z-index: 1000 !important;
   background-color: rgba(255, 255, 255, 0.5);
   cursor: crosshair;
@@ -63,7 +62,7 @@
 .colors {
   background-color: #ece8e8;
   text-align: center;
-  padding-top: 3px !important;
+  padding: 5px !important;
   margin: 0px !important;
 }
 
@@ -101,8 +100,7 @@
   border: 0;
   border-radius: 0;
   background-color: #ece8e8;
-  padding: 1px !important;
-  height: 30px;
+  padding: 5px !important;
   outline: none;
   position: relative;
   cursor: pointer;
