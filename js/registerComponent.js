@@ -17,6 +17,8 @@ AFRAME.registerComponent("markerhandler", {
       // display first painting info
       document.getElementById("imgInfo_" + key).style.display = "block";
 
+      document.getElementById("likeButton").style.display = "block";
+
       var openCanvasButton = document.getElementById("openCanvasButton");
       openCanvasButton.style.display = "block";
       openCanvasButton.addEventListener("click", e => {
@@ -41,6 +43,7 @@ AFRAME.registerComponent("markerhandler", {
         .getAttribute("src")
         .replace("#", "");
       document.getElementById("imgInfo_" + key).style.display = "none";
+      document.getElementById("likeButton").style.display = "none";
     });
   }
 });
