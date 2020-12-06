@@ -67,13 +67,12 @@
                     "'></a-image>"
                 );
 
-                document.body +=
+                document.body.innerHTML +=
                   "<div class='imgTitle ui segment' id='imgTitle_" +
                   key +
                   "'>" +
                   snap.val()[key].name +
-                  "</div>";
-                document.body +=
+                  "</div>" +
                   "<div class='imgDes ui segment' id='imgDes_" +
                   key +
                   "'>" +
