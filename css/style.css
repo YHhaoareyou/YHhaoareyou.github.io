@@ -1,8 +1,8 @@
 #openCanvasButton {
   display: none;
   position: fixed;
-  bottom: 5%;
-  right: 5%;
+  bottom: 2%;
+  right: 2%;
   width: 100px;
   height: 50px;
   padding: 5px !important;
@@ -189,8 +189,8 @@
 
 .imgInfo {
   position: fixed !important;
-  bottom: 5% !important;
-  left: 5% !important;
+  bottom: 2% !important;
+  left: 2% !important;
   width: 60% !important;
   height: 80px !important;
   word-wrap: break-word !important;
@@ -199,5 +199,6 @@
   color: #000;
   text-align: center;
   padding: 5px !important;
+  margin: 0px !important;
   display: none;
 }
