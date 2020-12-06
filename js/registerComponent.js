@@ -11,14 +11,14 @@ AFRAME.registerComponent("markerhandler", {
       nextImgButton.setAttribute("name", locationName);
 
       if (document.getElementById("newPaintCanvas").style.display !== "block") {
+        const key = document
+          .querySelector(
+            "nft_" + locationName + " > a-image[name='currentImg']"
+          )
+          .getAttribute("src")
+          .replace("#", "");
         // display first painting info
-        document.getElementById(
-          "imgInfo_" +
-            e.target
-              .querySelector("a-image[name='currentImg']")
-              .getAttribute("src")
-              .replace("#", "")
-        ).style.display = "block";
+        document.getElementById("imgInfo_" + key).style.display = "block";
 
         var openCanvasButton = document.getElementById("openCanvasButton");
         openCanvasButton.style.display = "block";
