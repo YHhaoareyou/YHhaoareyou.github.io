@@ -52,7 +52,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 #toolPanel {
-  width: 600px;
+  width: 100vw;
   position: fixed;
   bottom: 0;
   left: 0;
