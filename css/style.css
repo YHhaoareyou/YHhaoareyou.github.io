@@ -87,6 +87,8 @@
 .colors {
   background-color: #ece8e8;
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .colors button {
@@ -110,6 +112,11 @@
 
 .colors button:nth-of-type(3) {
   background-color: rgb(0, 0, 255);
+}
+
+.brushes {
+  padding: 0px;
+  margin: 0px;
 }
 
 .brushes button {
@@ -145,8 +152,8 @@
 }
 
 .buttons {
-  height: 80px;
-  padding-top: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .buttons button {
