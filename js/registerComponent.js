@@ -10,26 +10,22 @@ AFRAME.registerComponent("markerhandler", {
       prevImgButton.setAttribute("name", locationName);
       nextImgButton.setAttribute("name", locationName);
 
-      if (document.getElementById("newPaintCanvas").style.display !== "block") {
-        const key = document
-          .querySelector(
-            "nft_" + locationName + " > a-image[name='currentImg']"
-          )
-          .getAttribute("src")
-          .replace("#", "");
-        // display first painting info
-        document.getElementById("imgInfo_" + key).style.display = "block";
+      const key = document
+        .querySelector("#nft_" + locationName + " a-image[name='currentImg']")
+        .getAttribute("src")
+        .replace("#", "");
+      // display first painting info
+      document.getElementById("imgInfo_" + key).style.display = "block";
 
-        var openCanvasButton = document.getElementById("openCanvasButton");
-        openCanvasButton.style.display = "block";
-        openCanvasButton.addEventListener("click", e => {
-          openCanvasButton.style.display = "none";
-          document.getElementById("newPaintCanvas").style.display = "block";
-          document.getElementById("closeCanvasButton").style.display = "block";
-          document.getElementById("toolPanel").style.display = "block";
-          document.getElementById("save").setAttribute("name", locationName);
-        });
-      }
+      var openCanvasButton = document.getElementById("openCanvasButton");
+      openCanvasButton.style.display = "block";
+      openCanvasButton.addEventListener("click", e => {
+        openCanvasButton.style.display = "none";
+        document.getElementById("newPaintCanvas").style.display = "block";
+        document.getElementById("closeCanvasButton").style.display = "block";
+        document.getElementById("toolPanel").style.display = "block";
+        document.getElementById("save").setAttribute("name", locationName);
+      });
     });
     this.el.sceneEl.addEventListener("markerLost", e => {
       document.getElementById("openCanvasButton").style.display = "none";
