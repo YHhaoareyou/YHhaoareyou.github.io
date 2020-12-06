@@ -3,8 +3,9 @@
   position: fixed;
   top: 90%;
   left: 0%;
-  width: 200px;
+  width: 100px;
   height: 50px;
+  padding: 5px !important;
   z-index: 500 !important;
 }
 #closeCanvasButton {
@@ -191,11 +192,12 @@
   bottom: 10% !important;
   left: 5% !important;
   width: 90% !important;
-  height: 50px !important;
+  height: 80px !important;
   word-wrap: break-word !important;
   overflow: scroll !important;
   background: rgba(255, 255, 255, 0.5) !important;
   color: #000;
   text-align: center;
+  padding: 5px !important;
   display: none;
 }
