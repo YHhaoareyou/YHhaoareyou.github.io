@@ -31,6 +31,16 @@ AFRAME.registerComponent("markerhandler", {
       document.getElementById("openCanvasButton").style.display = "none";
       document.getElementById("prevImgButton").style.display = "none";
       document.getElementById("nextImgButton").style.display = "none";
+      // hide painting info
+      const key = document
+        .querySelector(
+          "#nft_" +
+            e.target.id.replace("nft_", "") +
+            " a-image[name='currentImg']"
+        )
+        .getAttribute("src")
+        .replace("#", "");
+      document.getElementById("imgInfo_" + key).style.display = "none";
     });
   }
 });
