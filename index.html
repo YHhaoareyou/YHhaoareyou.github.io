@@ -67,22 +67,18 @@
                     "'></a-image>"
                 );
 
-                targetNft.insertAdjacentHTML(
-                  "beforeend",
+                document.body +=
                   "<div class='imgTitle ui segment' id='imgTitle_" +
-                    i +
-                    "'>" +
-                    snap.val()[key].name +
-                    "</div>"
-                );
-                targetNft.insertAdjacentHTML(
-                  "beforeend",
+                  key +
+                  "'>" +
+                  snap.val()[key].name +
+                  "</div>";
+                document.body +=
                   "<div class='imgDes ui segment' id='imgDes_" +
-                    i +
-                    "'>" +
-                    (snap.val()[key].description || "") +
-                    "</div>"
-                );
+                  key +
+                  "'>" +
+                  (snap.val()[key].description || "") +
+                  "</div>";
               });
             });
         });
