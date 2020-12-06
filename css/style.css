@@ -97,45 +97,30 @@
   background-color: lightgreen;
 }
 .colors button:nth-of-type(7) {
-  background-color: springgreen;
-}
-.colors button:nth-of-type(8) {
   background-color: green;
 }
-.colors button:nth-of-type(9) {
+.colors button:nth-of-type(8) {
   background-color: cyan;
 }
-.colors button:nth-of-type(10) {
+.colors button:nth-of-type(9) {
   background-color: deepskyblue;
 }
-.colors button:nth-of-type(11) {
-  background-color: teal;
-}
-.colors button:nth-of-type(12) {
+.colors button:nth-of-type(10) {
   background-color: blue;
 }
-.colors button:nth-of-type(13) {
-  background-color: navy;
-}
-.colors button:nth-of-type(14) {
+.colors button:nth-of-type(11) {
   background-color: purple;
 }
-.colors button:nth-of-type(15) {
-  background-color: rebeccapurple;
-}
-.colors button:nth-of-type(16) {
+.colors button:nth-of-type(12) {
   background-color: maroon;
 }
-.colors button:nth-of-type(17) {
+.colors button:nth-of-type(13) {
   background-color: black;
 }
-.colors button:nth-of-type(18) {
+.colors button:nth-of-type(14) {
   background-color: white;
 }
-.colors button:nth-of-type(19) {
-  background-color: gold;
-}
-.colors button:nth-of-type(20) {
+.colors button:nth-of-type(15) {
   background-color: silver;
 }
 
