@@ -19,7 +19,7 @@ AFRAME.registerComponent("markerhandler", {
           openCanvasButton.style.display = "none";
           document.getElementById("newPaintCanvas").style.display = "block";
           document.getElementById("closeCanvasButton").style.display = "block";
-          document.getElementById("colorPanel").style.display = "block";
+          document.getElementById("toolPanel").style.display = "block";
           document.getElementById("save").setAttribute("name", locationName);
         });
       }

@@ -52,10 +52,26 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 #colorPanel {
-  width: 160px;
+  width: 200px;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
+  z-index: 1001 !important;
+  display: none;
+}
+#brushPanel {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 200px;
+  z-index: 1001 !important;
+  display: none;
+}
+#actionPanel {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 300px;
   z-index: 1001 !important;
   display: none;
 }

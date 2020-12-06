@@ -1,7 +1,7 @@
 function closeCanvas() {
   document.getElementById("newPaintCanvas").style.display = "none";
   document.getElementById("closeCanvasButton").style.display = "none";
-  document.getElementById("colorPanel").style.display = "none";
+  document.getElementById("toolPanel").style.display = "none";
 }
 
 function saveCanvas(canvas, locationName) {
