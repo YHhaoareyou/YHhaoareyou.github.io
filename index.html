@@ -83,14 +83,18 @@
   </head>
 
   <body style="width: 100%; margin: 0; overflow: hidden;">
-    <button id="closeCanvasButton" onclick="closeCanvas()">
-      Close canvas
+    <button
+      class="ui button red"
+      id="closeCanvasButton"
+      onclick="closeCanvas()"
+    >
+      ×
     </button>
-    <button id="openCanvasButton">
+    <button class="ui button" id="openCanvasButton">
       Create new painting
     </button>
-    <button id="prevImgButton" name=""><</button>
-    <button id="nextImgButton" name="">></button>
+    <button class="ui button" id="prevImgButton" name=""><</button>
+    <button class="ui button" id="nextImgButton" name="">></button>
 
     <div id="colorPanel">
       <div class="colors">
