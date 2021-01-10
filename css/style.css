@@ -1,7 +1,14 @@
 #header {
-  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0px;
+  width: 100vw;
   text-align: center;
+}
+
+#header button {
+  z-index: 1000;
 }
 
 #openCanvasButton {
