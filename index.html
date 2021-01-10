@@ -43,6 +43,7 @@
             }
             // The signed-in user info.
             var user = result.user;
+            console.log(user);
             if (user) {
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
