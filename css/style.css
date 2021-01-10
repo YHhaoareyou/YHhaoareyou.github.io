@@ -5,10 +5,11 @@
   margin: 0px;
   width: 100vw;
   text-align: center;
+  z-index: -1;
 }
 
 #header button {
-  z-index: -1;
+  z-index: 1000;
 }
 
 #openCanvasButton {
