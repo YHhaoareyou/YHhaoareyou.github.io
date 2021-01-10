@@ -36,8 +36,10 @@
               "<h4>Welcome! " + user.displayName + "</h4>";
             configCanvas(user.uid);
           } else {
-            document.getElementById("openCanvasButton").remove();
-            document.getElementById("likeButton").remove();
+            var openCanvasButton = document.getElementById("openCanvasButton");
+            if (openCanvasButton) openCanvasButton.remove();
+            var likeButton = document.getElementById("likeButton");
+            if (likeButton) likeButton.remove();
           }
         });
 
@@ -51,8 +53,12 @@
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
             } else {
-              document.getElementById("openCanvasButton").remove();
-              document.getElementById("likeButton").remove();
+              var openCanvasButton = document.getElementById(
+                "openCanvasButton"
+              );
+              if (openCanvasButton) openCanvasButton.remove();
+              var likeButton = document.getElementById("likeButton");
+              if (likeButton) likeButton.remove();
             }
           })
           .catch((error) => {

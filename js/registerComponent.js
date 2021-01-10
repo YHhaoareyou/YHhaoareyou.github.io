@@ -12,13 +12,16 @@ AFRAME.registerComponent("markerhandler", {
         nextImgButton.setAttribute("name", locationName);
 
         var openCanvasButton = document.getElementById("openCanvasButton");
-        openCanvasButton.style.display = "block";
-        openCanvasButton.addEventListener("click", (e) => {
-          document.getElementById("newPaintCanvas").style.display = "block";
-          document.getElementById("closeCanvasButton").style.display = "block";
-          document.getElementById("toolPanel").style.display = "block";
-          document.getElementById("save").setAttribute("name", locationName);
-        });
+        if (openCanvasButton) {
+          openCanvasButton.style.display = "block";
+          openCanvasButton.addEventListener("click", (e) => {
+            document.getElementById("newPaintCanvas").style.display = "block";
+            document.getElementById("closeCanvasButton").style.display =
+              "block";
+            document.getElementById("toolPanel").style.display = "block";
+            document.getElementById("save").setAttribute("name", locationName);
+          });
+        }
 
         if (document.querySelector("#nft_" + locationName + " a-image")) {
           const key = document
@@ -37,7 +40,8 @@ AFRAME.registerComponent("markerhandler", {
       }
     });
     this.el.sceneEl.addEventListener("markerLost", (e) => {
-      document.getElementById("openCanvasButton").style.display = "none";
+      var openCanvasButton = document.getElementById("openCanvasButton");
+      if (openCanvasButton) openCanvasButton.style.display = "none";
       document.getElementById("prevImgButton").style.display = "none";
       document.getElementById("nextImgButton").style.display = "none";
       // hide painting info
@@ -50,7 +54,8 @@ AFRAME.registerComponent("markerhandler", {
         .getAttribute("src")
         .replace("#", "");
       document.getElementById("imgInfo_" + key).style.display = "none";
-      document.getElementById("likeButton").style.display = "none";
+      var likeButton = document.getElementById("likeButton");
+      if (likeButton) likeButton.style.display = "none";
     });
   },
 });
