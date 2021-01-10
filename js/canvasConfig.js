@@ -6,37 +6,41 @@ function closeCanvas() {
 
 function saveCanvas(canvas, locationName, uid) {
   var imageName = prompt("Please name your painting");
-  var description = prompt("Please write something about this painting");
-  canvas.toBlob(function (blob) {
-    var image = new Image();
-    image.src = blob;
-    const uploadTimestamp = Date.now();
-    var uploadTask = storage
-      .ref()
-      .child("images/" + imageName)
-      .put(blob)
-      .then((snapshot) => {
-        return snapshot.ref.getDownloadURL();
-      })
-      .then((imageUrl) => {
-        database
+  if (imageName) {
+    var description = prompt("Please write something about this painting");
+    if (description) {
+      canvas.toBlob(function (blob) {
+        var image = new Image();
+        image.src = blob;
+        const uploadTimestamp = Date.now();
+        var uploadTask = storage
           .ref()
-          .child(locationName + "/" + uploadTimestamp)
-          .set({
-            name: imageName,
-            description: description,
-            url: imageUrl,
-            timestamp: uploadTimestamp,
-            user: uid,
+          .child("images/" + imageName)
+          .put(blob)
+          .then((snapshot) => {
+            return snapshot.ref.getDownloadURL();
           })
-          .then(function (snap) {
-            alert("Uploaded! Refresh the page to see your materpiece!");
-          })
-          .catch((error) => {
-            alert(error);
+          .then((imageUrl) => {
+            database
+              .ref()
+              .child(locationName + "/" + uploadTimestamp)
+              .set({
+                name: imageName,
+                description: description,
+                url: imageUrl,
+                timestamp: uploadTimestamp,
+                user: uid,
+              })
+              .then(function (snap) {
+                alert("Uploaded! Refresh the page to see your materpiece!");
+              })
+              .catch((error) => {
+                alert(error);
+              });
           });
       });
-  });
+    }
+  }
 }
 
 function configCanvas(uid) {
