@@ -32,7 +32,8 @@
       window.onload = function () {
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
-            console.log(user);
+            document.getElementById("header").innerHTML =
+              "<h4>Welcome! " + user.displayName + "</h4>";
           }
         });
 
