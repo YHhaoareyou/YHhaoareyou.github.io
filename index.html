@@ -15,6 +15,7 @@
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
@@ -28,13 +29,40 @@
     <script src="js/paintingSwitch.js"></script>
 
     <script>
-      window.onload = function() {
+      window.onload = function () {
+        firebase
+          .auth()
+          .getRedirectResult()
+          .then((result) => {
+            if (result.credential) {
+              var credential = result.credential;
+
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              var token = credential.accessToken;
+              // ...
+            }
+            // The signed-in user info.
+            var user = result.user;
+            console.log(user);
+          })
+          .catch((error) => {
+            console.log(error);
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+
         // load images in advancec
-        ["location1", "location2"].forEach(locationName => {
+        ["location1", "location2"].forEach((locationName) => {
           database
             .ref(locationName)
             .once("value")
-            .then(snap => {
+            .then((snap) => {
               const imgCnt = Object.keys(snap.val()).length;
               var targetNft = document.getElementById("nft_" + locationName);
               targetNft.setAttribute("imgCnt", imgCnt);
@@ -94,6 +122,15 @@
   </head>
 
   <body style="width: 100%; margin: 0; overflow: hidden;">
+    <div class="ui segment">
+      <button
+        class="ui button green"
+        onclick="firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider())"
+      >
+        Sign in
+      </button>
+    </div>
+
     <button
       class="ui button red"
       id="closeCanvasButton"
