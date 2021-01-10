@@ -5,6 +5,7 @@
   width: 100vw;
   height: 30px;
   margin: 0px;
+  padding: 0.3rem !important;
   text-align: center;
   z-index: 999;
   border-radius: 0px !important;
