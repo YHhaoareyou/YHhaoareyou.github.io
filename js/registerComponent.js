@@ -33,7 +33,8 @@ AFRAME.registerComponent("markerhandler", {
           // display first painting info
           document.getElementById("imgInfo_" + key).style.display = "block";
 
-          document.getElementById("likeButton").style.display = "block";
+          var likeButton = document.getElementById("likeButton");
+          if (likeButton) likeButton.style.display = "block";
         }
       } catch (e) {
         alert(e);
