@@ -45,7 +45,6 @@
           .auth()
           .getRedirectResult()
           .then((result) => {
-            if (result.credential) {
             // The signed-in user info.
             var user = result.user;
             if (user) {
