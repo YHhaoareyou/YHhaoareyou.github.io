@@ -26,6 +26,7 @@
     <script src="js/firebaseConfig.js"></script>
     <script src="js/registerComponent.js"></script>
     <script src="js/canvasConfig.js"></script>
+    <script src="js/likeConfig.js"></script>
     <script src="js/paintingSwitch.js"></script>
 
     <script>
@@ -35,6 +36,7 @@
             document.getElementById("header").innerHTML =
               "<h4>Welcome! " + user.displayName + "</h4>";
             configCanvas(user.uid);
+            configLike(user.uid);
           } else {
             var openCanvasButton = document.getElementById("openCanvasButton");
             if (openCanvasButton) openCanvasButton.remove();
