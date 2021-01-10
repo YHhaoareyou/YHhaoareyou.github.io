@@ -43,7 +43,10 @@
             }
             // The signed-in user info.
             var user = result.user;
-            console.log(user);
+            if (user) {
+              document.getElementById("header").innerHTML =
+                "<h4>Welcome! " + user.displayName + "</h4>";
+            }
           })
           .catch((error) => {
             console.log(error);
@@ -122,7 +125,7 @@
   </head>
 
   <body style="width: 100%; margin: 0; overflow: hidden;">
-    <div class="ui segment">
+    <div class="ui segment" id="header">
       <button
         class="ui button green"
         style="z-index: 1000;"
