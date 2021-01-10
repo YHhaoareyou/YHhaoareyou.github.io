@@ -4,10 +4,10 @@ function closeCanvas() {
   document.getElementById("toolPanel").style.display = "none";
 }
 
-function saveCanvas(canvas, locationName) {
+function saveCanvas(canvas, locationName, uid) {
   var imageName = prompt("Please name your painting");
   var description = prompt("Please write something about this painting");
-  canvas.toBlob(function(blob) {
+  canvas.toBlob(function (blob) {
     var image = new Image();
     image.src = blob;
     const uploadTimestamp = Date.now();
@@ -15,10 +15,10 @@ function saveCanvas(canvas, locationName) {
       .ref()
       .child("images/" + imageName)
       .put(blob)
-      .then(snapshot => {
+      .then((snapshot) => {
         return snapshot.ref.getDownloadURL();
       })
-      .then(imageUrl => {
+      .then((imageUrl) => {
         database
           .ref()
           .child(locationName + "/" + uploadTimestamp)
@@ -27,19 +27,19 @@ function saveCanvas(canvas, locationName) {
             description: description,
             url: imageUrl,
             timestamp: uploadTimestamp,
-            user: "tester"
+            user: uid,
           })
-          .then(function(snap) {
+          .then(function (snap) {
             alert("Uploaded! Refresh the page to see your materpiece!");
           })
-          .catch(error => {
+          .catch((error) => {
             alert(error);
           });
       });
   });
 }
 
-function configCanvas() {
+function configCanvas(uid) {
   var canvas = document.getElementById("newPaintCanvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight * 0.8;
@@ -54,17 +54,17 @@ function configCanvas() {
 
   var colors = document.getElementsByClassName("colors")[0];
 
-  colors.addEventListener("click", function(event) {
+  colors.addEventListener("click", function (event) {
     context.strokeStyle = event.target.value || "#000000";
   });
 
   var brushes = document.getElementsByClassName("brushes")[0];
 
-  brushes.addEventListener("click", function(event) {
+  brushes.addEventListener("click", function (event) {
     context.lineWidth = event.target.value || 3;
   });
 
-  canvas.addEventListener("touchstart", function(event) {
+  canvas.addEventListener("touchstart", function (event) {
     setMouseCoordinates(event);
     isDrawing = true;
 
@@ -72,7 +72,7 @@ function configCanvas() {
     context.moveTo(mouseX, mouseY);
   });
 
-  canvas.addEventListener("touchmove", function(event) {
+  canvas.addEventListener("touchmove", function (event) {
     setMouseCoordinates(event);
 
     if (isDrawing) {
@@ -81,7 +81,7 @@ function configCanvas() {
     }
   });
 
-  canvas.addEventListener("touchend", function(event) {
+  canvas.addEventListener("touchend", function (event) {
     setMouseCoordinates(event);
     isDrawing = false;
   });
@@ -93,14 +93,14 @@ function configCanvas() {
 
   var clearButton = document.getElementById("clear");
 
-  clearButton.addEventListener("click", function() {
+  clearButton.addEventListener("click", function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
   });
 
   var saveButton = document.getElementById("save");
 
-  saveButton.addEventListener("click", e => {
+  saveButton.addEventListener("click", (e) => {
     const locationName = e.target.getAttribute("name");
-    saveCanvas(canvas, locationName);
+    saveCanvas(canvas, locationName, uid);
   });
 }
