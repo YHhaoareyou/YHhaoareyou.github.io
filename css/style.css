@@ -7,10 +7,6 @@
   text-align: center;
 }
 
-#header button {
-  z-index: 1000;
-}
-
 #openCanvasButton {
   display: none;
   position: fixed;
