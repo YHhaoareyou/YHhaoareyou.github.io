@@ -47,9 +47,7 @@ function configLike(uid) {
       var currentImg = document.querySelector(
         "#nft_" + locationName + " a-image[name='currentImg']"
       );
-      alert(currentImg);
       const imgId = currentImg.getAttribute("src").substring(1);
-      alert(imgId);
       like(imgId, locationName, uid);
     });
   }
