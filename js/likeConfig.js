@@ -41,9 +41,10 @@ function cancelLike(imgId, locationName, uid) {
 function configLike(uid) {
   var likeButton = document.getElementById("likeButton");
   if (likeButton) {
-    var locationName = likeButton.getAttribute("name");
-    alert(locationName);
+    console.log("like button found");
     likeButton.addEventListener("click", (e) => {
+      var locationName = likeButton.getAttribute("name");
+      alert(locationName);
       alert("like button clicked");
       var currentImg = document.querySelector(
         "#nft_" + locationName + " a-image[name='currentImg']"
@@ -56,6 +57,8 @@ function configLike(uid) {
       }
     });
     likeButton.addEventListener("touchend", (e) => {
+      var locationName = likeButton.getAttribute("name");
+      alert(locationName);
       alert("like button clicked");
       var currentImg = document.querySelector(
         "#nft_" + locationName + " a-image[name='currentImg']"
