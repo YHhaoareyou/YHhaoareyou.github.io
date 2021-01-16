@@ -40,6 +40,7 @@ function cancelLike(imgId, locationName, uid) {
 
 function configLike(uid) {
   var likeButton = document.getElementById("likeButton");
+  alert(likeButton);
   if (likeButton) {
     var locationName = likeButton.getAttribute("name");
     likeButton.addEventListener("click", (e) => {
@@ -50,7 +51,13 @@ function configLike(uid) {
       const imgId = currentImg.getAttribute("src").substring(1);
       like(imgId, locationName, uid);
     });
-  } else {
-    alert("like button not found");
+    likeButton.addEventListener("touchend", (e) => {
+      alert("like button clicked");
+      var currentImg = document.querySelector(
+        "#nft_" + locationName + " a-image[name='currentImg']"
+      );
+      const imgId = currentImg.getAttribute("src").substring(1);
+      like(imgId, locationName, uid);
+    });
   }
 }
