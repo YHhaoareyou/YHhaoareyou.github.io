@@ -41,7 +41,7 @@ function cancelLike(imgId, locationName, uid) {
 function configLike(uid) {
   var likeButton = document.getElementById("likeButton");
   if (likeButton) {
-    alert(likeButton);
+    alert("like button found");
     var locationName = likeButton.getAttribute("name");
     likeButton.addEventListener("click", (e) => {
       alert("like button clicked");
