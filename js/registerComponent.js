@@ -34,7 +34,10 @@ AFRAME.registerComponent("markerhandler", {
           document.getElementById("imgInfo_" + key).style.display = "block";
 
           var likeButton = document.getElementById("likeButton");
-          if (likeButton) likeButton.style.display = "block";
+          if (likeButton) {
+            likeButton.style.display = "block";
+            likeButton.setAttribute("name", locationName);
+          }
         }
       } catch (e) {
         alert(e);
