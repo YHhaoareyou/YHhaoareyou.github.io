@@ -50,5 +50,7 @@ function configLike(uid) {
       const imgId = currentImg.getAttribute("src").substring(1);
       like(imgId, locationName, uid);
     });
+  } else {
+    alert("like button not found");
   }
 }
