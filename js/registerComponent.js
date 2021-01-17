@@ -69,7 +69,7 @@ AFRAME.registerComponent("markerhandler", {
       $("#openCanvasButton").css("display", "none");
       $("#prevImgButton").css("display", "none");
       $("#nextImgButton").css("display", "none");
-      $("likeButton").css("display", "none");
+      $("#likeButton").css("display", "none");
 
       // hide painting info
       const key = $(
