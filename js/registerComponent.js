@@ -41,7 +41,6 @@ AFRAME.registerComponent("markerhandler", {
                 )
                   .attr("src")
                   .substring(1);
-                alert(imgId);
                 like(imgId, locationName, uid);
               }
             });

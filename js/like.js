@@ -1,8 +1,9 @@
 function like(imgId, locationName, uid) {
-  alert("liked button clicked!");
   const likesNode = database.ref().child(locationName + "/" + imgId + "/likes");
+  alert(likesNode);
 
   likesNode.once("value").then((snap) => {
+    alert(snap.val());
     likesNode
       .set({
         counts: snap.val().counts ? snap.val().counts + 1 : 0,
