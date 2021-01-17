@@ -40,6 +40,7 @@
             if (user) {
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
+              console.log(user);
               $("#uid").attr("name", user.uid);
             } else {
               $("#openCanvasButton").css("display", "none");
