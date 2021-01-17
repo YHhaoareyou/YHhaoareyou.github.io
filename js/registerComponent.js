@@ -15,7 +15,7 @@ AFRAME.registerComponent("markerhandler", {
         var openCanvasButton = $("#openCanvasButton");
         if (openCanvasButton) {
           openCanvasButton.css("display", "block");
-          openCanvasButton.addEventListener("click", (e) => {
+          openCanvasButton.on("click", (e) => {
             $("#newPaintCanvas").css("display", "block");
             $("#closeCanvasButton").css("display", "block");
             $("#toolPanel").css("display", "block");
@@ -33,7 +33,7 @@ AFRAME.registerComponent("markerhandler", {
           if (likeButton) {
             likeButton.css("display", "block");
             likeButton.attr("name", locationName);
-            likeButton.addEventListener("click", (e) => {
+            likeButton.on("click", (e) => {
               var uid = $("#state").data("uid");
               if (uid && uid !== "") {
                 const imgId = $(
