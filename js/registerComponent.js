@@ -23,10 +23,9 @@ AFRAME.registerComponent("markerhandler", {
           });
         }
 
-        if ($("#nft_" + locationName + " a-image")) {
-          const key = $("#nft_" + locationName + " a-image[name='currentImg']")
-            .attr("src")
-            .replace("#", "");
+        var aImage = $("#nft_" + locationName + " a-image[name='currentImg']");
+        if (aImage) {
+          const key = aImage.attr("src").replace("#", "");
           // display first painting info
           $("#imgInfo_" + key).css("display", "block");
 
