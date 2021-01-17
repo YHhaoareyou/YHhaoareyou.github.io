@@ -1,13 +1,11 @@
 function like(imgId, locationName, uid) {
   const likesNode = database.ref().child(locationName + "/" + imgId + "/likes");
-  alert(likesNode);
 
   likesNode.once("value").then((snap) => {
-    alert(snap.val());
     likesNode
       .set({
-        counts: snap.val().counts ? snap.val().counts + 1 : 0,
-        uids: snap.val().uids ? [snap.val().uids, uid].join(",") : uid,
+        counts: snap.val() ? snap.val().counts + 1 : 0,
+        uids: snap.val() ? [snap.val().uids, uid].join(",") : uid,
       })
       .then((snap) => {
         alert("Liked!");
