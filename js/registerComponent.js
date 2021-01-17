@@ -25,7 +25,7 @@ AFRAME.registerComponent("markerhandler", {
 
         var likeButton = $("#likeButton");
         if (likeButton) {
-          likeButton.style.display = "block";
+          likeButton.css("display", "block");
           likeButton.click(function () {
             alert("like button clicked");
             var currentImg = $(
