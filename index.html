@@ -189,37 +189,39 @@
     <canvas id="newPaintCanvas"></canvas>
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-assets id="a_assets"> </a-assets>
+      <div>
+        <a-assets id="a_assets"> </a-assets>
 
-      <a-nft
-        markerhandler
-        type="nft"
-        url="descriptors/blg51"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-        location="location1"
-        id="nft_location1"
-      >
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-      </a-nft>
+        <a-nft
+          markerhandler
+          type="nft"
+          url="descriptors/blg51"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+          location="location1"
+          id="nft_location1"
+        >
+          <a-entity cursor="rayOrigin: mouse"></a-entity>
+        </a-nft>
 
-      <a-nft
-        markerhandler
-        type="nft"
-        url="descriptors/takeuchi"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-        location="location2"
-        id="nft_location2"
-      >
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-      </a-nft>
+        <a-nft
+          markerhandler
+          type="nft"
+          url="descriptors/takeuchi"
+          smooth="true"
+          smoothCount="10"
+          smoothTolerance=".01"
+          smoothThreshold="5"
+          location="location2"
+          id="nft_location2"
+        >
+          <a-entity cursor="rayOrigin: mouse"></a-entity>
+        </a-nft>
 
-      <a-entity camera></a-entity>
+        <a-entity camera></a-entity>
+      </div>
     </a-scene>
   </body>
 </html>
