@@ -31,8 +31,12 @@ AFRAME.registerComponent("markerhandler", {
         if (likeButton) {
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
-            const imgId = currentImg.attr("src").substring(1);
-            like(imgId, locationName, uid);
+            alert("clicked");
+            alert(uid);
+            if (uid && uid !== "") {
+              const imgId = currentImg.attr("src").substring(1);
+              like(imgId, locationName, uid);
+            }
           });
         }
 

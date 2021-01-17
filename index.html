@@ -30,6 +30,7 @@
     <script src="js/paintingSwitch.js"></script>
 
     <script>
+      var uid = "";
       window.onload = function () {
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
@@ -54,12 +55,8 @@
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
             } else {
-              // var openCanvasButton = document.getElementById(
-              //   "openCanvasButton"
-              // );
-              // if (openCanvasButton) openCanvasButton.remove();
-              // var likeButton = document.getElementById("likeButton");
-              // if (likeButton) likeButton.remove();
+              $("#openCanvasButton").remove();
+              $("#likeButton").remove();
             }
           })
           .catch((error) => {
