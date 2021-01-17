@@ -1,5 +1,3 @@
-import { like, cancelLike } from "./like";
-
 AFRAME.registerComponent("markerhandler", {
   init: function () {
     this.el.sceneEl.addEventListener("markerFound", (e) => {

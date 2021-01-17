@@ -1,4 +1,4 @@
-export function like(imgId, locationName, uid) {
+function like(imgId, locationName, uid) {
   const likesNode = database.ref().child(locationName + "/" + imgId + "/likes");
 
   likesNode.once("value").then((snap) => {
@@ -16,7 +16,7 @@ export function like(imgId, locationName, uid) {
   });
 }
 
-export function cancelLike(imgId, locationName, uid) {
+function cancelLike(imgId, locationName, uid) {
   const likesNode = database.ref().child(locationName + "/" + imgId + "/likes");
 
   likesNode.once("value").then((snap) => {
