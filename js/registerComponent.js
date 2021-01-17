@@ -1,3 +1,5 @@
+import { like, cancelLike } from "./like";
+
 AFRAME.registerComponent("markerhandler", {
   init: function () {
     this.el.sceneEl.addEventListener("markerFound", (e) => {
@@ -10,6 +12,10 @@ AFRAME.registerComponent("markerhandler", {
         nextImgButton.style.display = "block";
         prevImgButton.setAttribute("name", locationName);
         nextImgButton.setAttribute("name", locationName);
+
+        var currentImg = document.querySelector(
+          "#nft_" + locationName + " a-image[name='currentImg']"
+        );
 
         var openCanvasButton = document.getElementById("openCanvasButton");
         if (openCanvasButton) {
@@ -27,35 +33,13 @@ AFRAME.registerComponent("markerhandler", {
         if (likeButton) {
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
-            alert("clicked!");
+            const imgId = currentImg.attr("src").substring(1);
+            like(imgId, locationName, uid);
           });
         }
 
-        // var likeButton = $("#likeButton");
-        // if (likeButton) {
-        //   alert("like button found");
-        //   likeButton.css("display", "block");
-        //   likeButton.on("click", function () {
-        //     alert("like button clicked");
-        //     // var currentImg = $(
-        //     //   "#nft_" + locationName + " a-image[name='currentImg']"
-        //     // );
-        //     // alert(currentImg);
-        //     // if (currentImg) {
-        //     //   const imgId = currentImg.attr("src").substring(1);
-        //     //   alert(imgId);
-        //     //   // like(imgId, locationName, uid);
-        //     // }
-        //   });
-        // }
-
         if (document.querySelector("#nft_" + locationName + " a-image")) {
-          const key = document
-            .querySelector(
-              "#nft_" + locationName + " a-image[name='currentImg']"
-            )
-            .getAttribute("src")
-            .replace("#", "");
+          const key = currentImg.getAttribute("src").replace("#", "");
           // display first painting info
           document.getElementById("imgInfo_" + key).style.display = "block";
 
