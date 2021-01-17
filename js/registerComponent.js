@@ -25,8 +25,9 @@ AFRAME.registerComponent("markerhandler", {
 
         var likeButton = $("#likeButton");
         if (likeButton) {
+          alert("like button found");
           likeButton.css("display", "block");
-          likeButton.click(function () {
+          likeButton.on("click", function () {
             alert("like button clicked");
             var currentImg = $(
               "#nft_" + locationName + " a-image[name='currentImg']"

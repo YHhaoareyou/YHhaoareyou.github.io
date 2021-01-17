@@ -38,10 +38,10 @@
             configCanvas(user.uid);
             configLike(user.uid);
           } else {
-            var openCanvasButton = document.getElementById("openCanvasButton");
-            // if (openCanvasButton) openCanvasButton.style.display = "none";
-            var likeButton = document.getElementById("likeButton");
-            // if (likeButton) likeButton.style.opacity = "none";
+            var openCanvasButton = $("#openCanvasButton");
+            if (openCanvasButton) openCanvasButton.style.display = "none";
+            var likeButton = $("#likeButton");
+            if (likeButton) likeButton.style.display = "none";
           }
         });
 
@@ -55,12 +55,12 @@
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
             } else {
-              var openCanvasButton = document.getElementById(
-                "openCanvasButton"
-              );
-              if (openCanvasButton) openCanvasButton.remove();
-              var likeButton = document.getElementById("likeButton");
-              if (likeButton) likeButton.remove();
+              // var openCanvasButton = document.getElementById(
+              //   "openCanvasButton"
+              // );
+              // if (openCanvasButton) openCanvasButton.remove();
+              // var likeButton = document.getElementById("likeButton");
+              // if (likeButton) likeButton.remove();
             }
           })
           .catch((error) => {
