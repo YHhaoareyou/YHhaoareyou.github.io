@@ -14,7 +14,8 @@ function like(imgId, locationName, uid) {
         })
         .then((snap) => {
           alert("Like canceled.");
-          $("#likesCount").text(parseInt(prevCounts) - 1);
+          const prevCounts = parseInt($("#likesCount").text());
+          $("#likesCount").text(prevCounts - 1);
         })
         .catch((error) => {
           alert(error);
@@ -27,7 +28,8 @@ function like(imgId, locationName, uid) {
         })
         .then((snap) => {
           alert("Liked!");
-          $("#likesCount").text(parseInt(prevCounts) + 1);
+          const prevCounts = parseInt($("#likesCount").text());
+          $("#likesCount").text(prevCounts + 1);
         })
         .catch((error) => {
           alert(error);
