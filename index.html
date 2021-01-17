@@ -40,8 +40,7 @@
             if (user) {
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
-              console.log(user);
-              $("#uid").attr("name", user.uid);
+              $("#state").attr("data-uid", user.uid);
             } else {
               $("#openCanvasButton").css("display", "none");
               $("#likeButton").css("display", "none");
@@ -114,6 +113,7 @@
   </head>
 
   <body style="width: 100%; margin: 0; overflow: hidden;">
+    <span id="state" data-uid=""></span>
     <div class="ui segment" id="header">
       <button
         class="ui button green"
@@ -121,11 +121,6 @@
       >
         Sign in
       </button>
-      <span
-        id="uid"
-        name=""
-        style="width: 0px; height: 0px; margin: 0px;"
-      ></span>
     </div>
 
     <button
