@@ -29,15 +29,15 @@ AFRAME.registerComponent("markerhandler", {
           likeButton.css("display", "block");
           likeButton.on("click", function () {
             alert("like button clicked");
-            var currentImg = $(
-              "#nft_" + locationName + " a-image[name='currentImg']"
-            );
-            alert(currentImg);
-            if (currentImg) {
-              const imgId = currentImg.attr("src").substring(1);
-              alert(imgId);
-              // like(imgId, locationName, uid);
-            }
+            // var currentImg = $(
+            //   "#nft_" + locationName + " a-image[name='currentImg']"
+            // );
+            // alert(currentImg);
+            // if (currentImg) {
+            //   const imgId = currentImg.attr("src").substring(1);
+            //   alert(imgId);
+            //   // like(imgId, locationName, uid);
+            // }
           });
         }
 
