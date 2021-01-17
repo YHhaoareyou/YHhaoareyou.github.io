@@ -32,9 +32,8 @@ AFRAME.registerComponent("markerhandler", {
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
             var uid = $("#state").data("uid");
-            alert(uid);
-            alert(like);
             if (uid && uid !== "") {
+              alert("uid exists!");
               const imgId = currentImg.attr("src").substring(1);
               like(imgId, locationName, uid);
             }
