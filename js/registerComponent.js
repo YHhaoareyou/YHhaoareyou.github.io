@@ -43,7 +43,7 @@ AFRAME.registerComponent("markerhandler", {
                 .ref()
                 .child(locationName + "/" + imgId + "/likes");
               likesNode.once("value").then((snap) => {
-                if (snap.val()) likeButton.text("♥ " + snap.val().counts);
+                $("#likesCount").text(snap.val() ? snap.val().counts : 0);
               });
               likeButton.css("display", "block");
               likeButton.attr("name", locationName);
