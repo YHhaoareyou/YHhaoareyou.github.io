@@ -61,10 +61,16 @@ AFRAME.registerComponent("markerhandler", {
     });
 
     this.el.sceneEl.addEventListener("markerLost", (e) => {
+      // Remove listeners
+      $("#openCanvasButton").off("click");
+      $("#likeButton").off("click");
+
+      // Hide buttons
       $("#openCanvasButton").css("display", "none");
       $("#prevImgButton").css("display", "none");
       $("#nextImgButton").css("display", "none");
       $("likeButton").css("display", "none");
+
       // hide painting info
       const key = $(
         "#nft_" +
