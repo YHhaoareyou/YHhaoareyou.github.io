@@ -14,7 +14,7 @@ function like(imgId, locationName, uid) {
         })
         .then((snap) => {
           alert("Like canceled.");
-          console.log(snap);
+          alert(snap);
           $("#likeButton").text("♥ " + snap.val().counts);
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ function like(imgId, locationName, uid) {
         })
         .then((snap) => {
           alert("Liked!");
-          console.log(snap);
+          alert(snap);
           $("#likeButton").text("♥ " + snap.val().counts);
         })
         .catch((error) => {
