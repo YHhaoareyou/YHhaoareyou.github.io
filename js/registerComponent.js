@@ -23,23 +23,32 @@ AFRAME.registerComponent("markerhandler", {
           });
         }
 
-        var likeButton = $("#likeButton");
+        var likeButton = document.getElementById("likeButton");
         if (likeButton) {
-          alert("like button found");
-          likeButton.css("display", "block");
-          likeButton.on("click", function () {
-            alert("like button clicked");
-            // var currentImg = $(
-            //   "#nft_" + locationName + " a-image[name='currentImg']"
-            // );
-            // alert(currentImg);
-            // if (currentImg) {
-            //   const imgId = currentImg.attr("src").substring(1);
-            //   alert(imgId);
-            //   // like(imgId, locationName, uid);
-            // }
+          alert("found");
+          likeButton.style.display = "block";
+          likeButton.addEventListener("click", (e) => {
+            alert("clicked!");
           });
         }
+
+        // var likeButton = $("#likeButton");
+        // if (likeButton) {
+        //   alert("like button found");
+        //   likeButton.css("display", "block");
+        //   likeButton.on("click", function () {
+        //     alert("like button clicked");
+        //     // var currentImg = $(
+        //     //   "#nft_" + locationName + " a-image[name='currentImg']"
+        //     // );
+        //     // alert(currentImg);
+        //     // if (currentImg) {
+        //     //   const imgId = currentImg.attr("src").substring(1);
+        //     //   alert(imgId);
+        //     //   // like(imgId, locationName, uid);
+        //     // }
+        //   });
+        // }
 
         if (document.querySelector("#nft_" + locationName + " a-image")) {
           const key = document
