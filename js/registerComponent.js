@@ -4,51 +4,53 @@ AFRAME.registerComponent("markerhandler", {
       // const locationName = e.target.getAttribute("location");
       try {
         const locationName = e.target.id.replace("nft_", ""); // Display painting switching buttons
-        var prevImgButton = document.getElementById("prevImgButton");
-        var nextImgButton = document.getElementById("nextImgButton");
-        prevImgButton.style.display = "block";
-        nextImgButton.style.display = "block";
-        prevImgButton.setAttribute("name", locationName);
-        nextImgButton.setAttribute("name", locationName);
+        $("#state").attr("data-locationName", locationName);
+        var prevImgButton = $("#prevImgButton");
+        var nextImgButton = $("#nextImgButton");
+        prevImgButton.css("display", "block");
+        nextImgButton.css("display", "block");
+        prevImgButton.attr("name", locationName);
+        nextImgButton.attr("name", locationName);
 
-        var currentImg = document.querySelector(
-          "#nft_" + locationName + " a-image[name='currentImg']"
-        );
-
-        var openCanvasButton = document.getElementById("openCanvasButton");
+        var openCanvasButton = $("#openCanvasButton");
         if (openCanvasButton) {
-          openCanvasButton.style.display = "block";
+          openCanvasButton.css("display", "block");
           openCanvasButton.addEventListener("click", (e) => {
-            document.getElementById("newPaintCanvas").style.display = "block";
-            document.getElementById("closeCanvasButton").style.display =
-              "block";
-            document.getElementById("toolPanel").style.display = "block";
-            document.getElementById("save").setAttribute("name", locationName);
+            $("#newPaintCanvas").css("display", "block");
+            $("#closeCanvasButton").css("display", "block");
+            $("#toolPanel").css("display", "block");
+            $("#save").attr("name", locationName);
           });
         }
 
-        var likeButton = document.getElementById("likeButton");
+        var likeButton = $("#likeButton");
         if (likeButton) {
-          likeButton.style.display = "block";
+          likeButton.css("display", "block");
           likeButton.addEventListener("click", (e) => {
             var uid = $("#state").data("uid");
             if (uid && uid !== "") {
-              alert("uid exists!");
-              const imgId = currentImg.attr("src").substring(1);
+              const imgId = $(
+                "#nft_" + locationName + " a-image[name='currentImg']"
+              )
+                .attr("src")
+                .substring(1);
+              alert(imgId);
               like(imgId, locationName, uid);
             }
           });
         }
 
-        if (document.querySelector("#nft_" + locationName + " a-image")) {
-          const key = currentImg.getAttribute("src").replace("#", "");
+        if ($("#nft_" + locationName + " a-image")) {
+          const key = $("#nft_" + locationName + " a-image[name='currentImg']")
+            .attr("src")
+            .replace("#", "");
           // display first painting info
-          document.getElementById("imgInfo_" + key).style.display = "block";
+          $("#imgInfo_" + key).css("display", "block");
 
-          var likeButton = document.getElementById("likeButton");
+          var likeButton = $("#likeButton");
           if (likeButton) {
-            likeButton.style.display = "block";
-            likeButton.setAttribute("name", locationName);
+            likeButton.css("display", "block");
+            likeButton.attr("name", locationName);
           }
         }
       } catch (e) {
@@ -62,13 +64,12 @@ AFRAME.registerComponent("markerhandler", {
       document.getElementById("prevImgButton").style.display = "none";
       document.getElementById("nextImgButton").style.display = "none";
       // hide painting info
-      const key = document
-        .querySelector(
-          "#nft_" +
-            e.target.id.replace("nft_", "") +
-            " a-image[name='currentImg']"
-        )
-        .getAttribute("src")
+      const key = $(
+        "#nft_" +
+          e.target.id.replace("nft_", "") +
+          " a-image[name='currentImg']"
+      )
+        .attr("src")
         .replace("#", "");
       document.getElementById("imgInfo_" + key).style.display = "none";
       var likeButton = document.getElementById("likeButton");
