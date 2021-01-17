@@ -25,7 +25,6 @@ AFRAME.registerComponent("markerhandler", {
 
         var likeButton = document.getElementById("likeButton");
         if (likeButton) {
-          alert("found");
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
             alert("clicked!");
