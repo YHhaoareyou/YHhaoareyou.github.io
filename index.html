@@ -31,6 +31,17 @@
 
     <script>
       window.onload = function () {
+        firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            document.getElementById("header").innerHTML =
+              "<h4>Welcome! " + user.displayName + "</h4>";
+            $("#state").attr("data-uid", user.uid);
+          } else {
+            $("#openCanvasButton").css("display", "none");
+            $("#likeButton").css("display", "none");
+          }
+        });
+
         firebase
           .auth()
           .getRedirectResult()
