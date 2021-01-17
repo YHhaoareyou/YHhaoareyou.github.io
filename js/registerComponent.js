@@ -23,23 +23,6 @@ AFRAME.registerComponent("markerhandler", {
           });
         }
 
-        var likeButton = $("#likeButton");
-        if (likeButton) {
-          likeButton.css("display", "block");
-          likeButton.addEventListener("click", (e) => {
-            var uid = $("#state").data("uid");
-            if (uid && uid !== "") {
-              const imgId = $(
-                "#nft_" + locationName + " a-image[name='currentImg']"
-              )
-                .attr("src")
-                .substring(1);
-              alert(imgId);
-              like(imgId, locationName, uid);
-            }
-          });
-        }
-
         if ($("#nft_" + locationName + " a-image")) {
           const key = $("#nft_" + locationName + " a-image[name='currentImg']")
             .attr("src")
@@ -51,6 +34,18 @@ AFRAME.registerComponent("markerhandler", {
           if (likeButton) {
             likeButton.css("display", "block");
             likeButton.attr("name", locationName);
+            likeButton.addEventListener("click", (e) => {
+              var uid = $("#state").data("uid");
+              if (uid && uid !== "") {
+                const imgId = $(
+                  "#nft_" + locationName + " a-image[name='currentImg']"
+                )
+                  .attr("src")
+                  .substring(1);
+                alert(imgId);
+                like(imgId, locationName, uid);
+              }
+            });
           }
         }
       } catch (e) {
