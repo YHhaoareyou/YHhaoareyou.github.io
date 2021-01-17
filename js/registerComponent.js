@@ -32,9 +32,10 @@ AFRAME.registerComponent("markerhandler", {
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
             var uid = $("#state").data("uid");
+            alert(uid);
+            alert(like);
             if (uid && uid !== "") {
               const imgId = currentImg.attr("src").substring(1);
-              alert(like);
               like(imgId, locationName, uid);
             }
           });
@@ -55,6 +56,7 @@ AFRAME.registerComponent("markerhandler", {
         alert(e);
       }
     });
+
     this.el.sceneEl.addEventListener("markerLost", (e) => {
       var openCanvasButton = document.getElementById("openCanvasButton");
       if (openCanvasButton) openCanvasButton.style.display = "none";
