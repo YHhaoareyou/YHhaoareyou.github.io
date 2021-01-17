@@ -32,11 +32,12 @@ AFRAME.registerComponent("markerhandler", {
           likeButton.style.display = "block";
           likeButton.addEventListener("click", (e) => {
             alert("clicked");
+            var uid = $("#uid").attr("name");
             alert(uid);
-            // if (uid && uid !== "") {
-            //   const imgId = currentImg.attr("src").substring(1);
-            //   like(imgId, locationName, uid);
-            // }
+            if (uid && uid !== "") {
+              const imgId = currentImg.attr("src").substring(1);
+              like(imgId, locationName, uid);
+            }
           });
         }
 

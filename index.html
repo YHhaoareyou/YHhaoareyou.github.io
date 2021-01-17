@@ -41,8 +41,9 @@
               document.getElementById("header").innerHTML =
                 "<h4>Welcome! " + user.displayName + "</h4>";
             } else {
-              $("#openCanvasButton").style.display = "none";
-              $("#likeButton").style.display = "none";
+              $("#openCanvasButton").css("display", "none");
+              $("#likeButton").css("display", "none");
+              $("#uid").attr("name", user.uid);
             }
           })
           .catch((error) => {
@@ -119,6 +120,7 @@
       >
         Sign in
       </button>
+      <span id="uid" name="" style="display: none;"></span>
     </div>
 
     <button
