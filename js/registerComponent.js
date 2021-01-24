@@ -20,12 +20,16 @@ AFRAME.registerComponent("markerhandler", {
           if (openCanvasButton) {
             openCanvasButton.css("display", "block");
             // openCanvasButton onclick: display canvas
-            openCanvasButton.on("click", (e) => {
-              $("#newPaintCanvas").css("display", "block");
-              $("#closeCanvasButton").css("display", "block");
-              $("#toolPanel").css("display", "block");
-              $("#save").attr("name", locationName);
-            });
+            openCanvasButton.on(
+              "click",
+              (e) => {
+                $("#newPaintCanvas").css("display", "block");
+                $("#closeCanvasButton").css("display", "block");
+                $("#toolPanel").css("display", "block");
+                $("#save").attr("name", locationName);
+              },
+              { once: false }
+            );
           }
 
           var aImage = $(
@@ -48,10 +52,14 @@ AFRAME.registerComponent("markerhandler", {
               likeButton.css("display", "block");
               likeButton.attr("name", locationName);
               // likeButton onclick: like!
-              likeButton.on("click", (e) => {
-                var uid = $("#state").data("uid");
-                like(imgId, locationName, uid);
-              });
+              likeButton.on(
+                "click",
+                (e) => {
+                  var uid = $("#state").data("uid");
+                  like(imgId, locationName, uid);
+                },
+                { once: false }
+              );
             }
           }
         }
